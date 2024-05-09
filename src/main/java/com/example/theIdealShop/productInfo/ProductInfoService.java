@@ -6,11 +6,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -34,13 +31,13 @@ public class ProductInfoService {
 
         productInfoRepository.deleteById(id);
     }
-/*
-    public void addNewProduct(ProductInfo productInfo) {
-        Optional<ProductInfo> productInfoOptional = productInfoRepository
+
+    public void addNewProductInfo(ProductInfo productInfo) {
+     /*    Optional<ProductInfo> productInfoOptional = productInfoRepository
                 .findProductInfoByName(productInfo.getName());
         if(productInfoOptional.isPresent()) {
             throw new IllegalStateException("Product already there !");
-        }
-        productRepository.save(product);
-    }*/
+        }*/
+        productInfoRepository.save(productInfo);
+    }
 }

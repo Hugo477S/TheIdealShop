@@ -4,6 +4,9 @@ package com.example.theIdealShop.productStock;
 import jakarta.persistence.*;
 
 import com.example.theIdealShop.product.Product;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import org.springframework.context.annotation.Primary;
 
 import java.time.LocalDate;

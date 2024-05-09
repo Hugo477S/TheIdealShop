@@ -3,13 +3,9 @@ package com.example.theIdealShop.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
 //@RequestMapping(path="api/v1/product") // localhost puis api...
 public class ProductController {
 
@@ -20,10 +16,13 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @CrossOrigin
     @GetMapping("/")
     public List<Product> getProducts(){ //
         return productService.getProducts();
     }
+
+    @CrossOrigin
     @PostMapping("/")
     public void registerNewProduct(@RequestBody Product product) {
         productService.addNewProduct(product);

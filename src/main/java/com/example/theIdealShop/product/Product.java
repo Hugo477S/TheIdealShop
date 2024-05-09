@@ -3,10 +3,15 @@ package com.example.theIdealShop.product;
 import com.example.theIdealShop.domain.Notation;
 import com.example.theIdealShop.productInfo.ProductInfo;
 import com.example.theIdealShop.productStock.ProductStock;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.example.theIdealShop.labels.Labels;
 import jakarta.persistence.*;
 
 @Entity
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 @Table(name="product")
 public class Product {
     @Id
@@ -32,7 +37,7 @@ public class Product {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name= "product_info_id", referencedColumnName = "infoId")
-    private ProductInfo productInfo;
+    private ProductInfo productInfo;  
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name= "product_stock_id", referencedColumnName = "id")

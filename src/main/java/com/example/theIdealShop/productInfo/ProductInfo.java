@@ -1,6 +1,8 @@
 package com.example.theIdealShop.productInfo;
 
 import com.example.theIdealShop.product.Product;
+
+
 import jakarta.persistence.*;
 
 @Entity

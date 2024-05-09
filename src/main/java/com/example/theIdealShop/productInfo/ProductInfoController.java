@@ -21,13 +21,15 @@ public class ProductInfoController {
         this.productInfoService = productInfoService;
     }
 
+    @CrossOrigin
     @GetMapping("/")
     public List<ProductInfo> getProductsInfos(){ //
         return productInfoService.getProductsInfos();
     }
-    /*
+    
+    @CrossOrigin
     @PostMapping("/")
-    public void registerNewProduct(@RequestBody Product product) {
-        productService.addNewProduct(product);
-    }*/
+    public void registerNewProduct(@RequestBody ProductInfo productInfo) {
+        productInfoService.addNewProductInfo(productInfo);
+    }
 }
