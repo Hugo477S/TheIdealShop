@@ -1,23 +1,25 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <ul class="navbar-bar">
-        <li class="nav-item">
-            <a routerLink="products" routerLinkActive="active" class="nav-link">Product List</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="create-product" routerLinkActive="active" class="nav-link">Add Product</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="product-info" routerLinkActive="active" class="nav-link">Product Info list</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="create-product-info" routerLinkActive="active" class="nav-link">Add Product Info</a>
-        </li>
-    </ul>
-
-</nav>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  
+</body>
+</html>
 
 <h1 class="text-center">{{title}}</h1>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<nav>
+  <ul>
+    <li>
+      <a id="products" (click) = "navigate($event)">Produits</a>
+    </li>
+    <li>
+      <a id="cart" (click) = "navigate($event)">Votre panier</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

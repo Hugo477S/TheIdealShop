@@ -1,14 +1,14 @@
 package com.example.theIdealShop.productInfo;
 
-import com.example.theIdealShop.productInfo.ProductInfo;
-import com.example.theIdealShop.productInfo.ProductInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path="api/v1/productInfo")
@@ -23,13 +23,13 @@ public class ProductInfoController {
 
     @CrossOrigin
     @GetMapping("/")
-    public List<ProductInfo> getProductsInfos(){ //
+    public List<PM> getProductsInfos(){ //
         return productInfoService.getProductsInfos();
-    }
+    }  
     
     @CrossOrigin
     @PostMapping("/")
-    public void registerNewProduct(@RequestBody ProductInfo productInfo) {
+    public void registerNewProduct(@RequestBody PM productInfo) {
         productInfoService.addNewProductInfo(productInfo);
     }
 }

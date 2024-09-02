@@ -1,21 +1,12 @@
 package com.example.theIdealShop.productStock;
 
-import com.example.theIdealShop.product.Product;
-import com.example.theIdealShop.productStock.ProductStock;
-import com.example.theIdealShop.productStock.ProductStockRepository;
-import jakarta.transaction.Transactional;
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 @Service
-
 public class ProductStockService {
 
     private final ProductStockRepository productStockRepository;
@@ -30,7 +21,7 @@ public class ProductStockService {
     }
 
     public void addProductStock(ProductStock productStock, String deliName) {
-        ProductStock sameProdIdOrNot = productStockRepository.findByProductName(deliName)
+        ProductStock sameProdIdOrNot = productStockRepository.findByProductProductName(deliName)
                 .orElseThrow(() -> new IllegalStateException(
                 "student with id " + deliName + "doesnt exist"
         ));

@@ -1,33 +1,32 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductInfoListComponent } from './product-info-list/product-info-list.component';
-import { CreateProductComponent } from './create-product/create-product.component';
+import { ProductComponent } from './product/product.component';
 
-import { FormsModule} from '@angular/forms';
-import { CreateProductInfoComponent } from './create-product-info/create-product-info.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProductComponent,
     ProductListComponent,
-    ProductInfoListComponent,
-    CreateProductComponent,
-    CreateProductInfoComponent
+    CartComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    RouterModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

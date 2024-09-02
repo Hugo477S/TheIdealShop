@@ -1,0 +1,107 @@
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 1.2em;
+}
+
+h2 {
+    text-align: center;
+}
+
+.prodContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 80%;
+}
+
+.product {
+    border: 2px solid blue;
+    border-radius: 25px;
+    padding: 10px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+h2 {
+   
+    line-height: 1.1;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.infosCont{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    padding: 1em;
+}
+
+.infosCont div {
+    border: 1px solid blue;
+}
+
+.infosCont p {
+    margin:0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product p{
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 17px;
+    margin-left: 8%;
+}
+
+#prodCat {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+#prodPrice {
+    margin-top: 1%;
+    color: grey;
+    font-size: 16px;
+}
+
+.prodImg {
+    width: 80%;
+}
+
+.macro, .vitamines, .mineraux {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    border-bottom: 3px solid greenyellow;
+    
+}
+
+.extra {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.columnsContainer {
+    display: flex;
+}

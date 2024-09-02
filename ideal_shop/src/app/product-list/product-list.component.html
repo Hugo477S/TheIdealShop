@@ -1,13 +1,218 @@
-<h2>Product List</h2>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Mass</th>
-    </tr>
-    <tr *ngFor = "let product of products">
-        <td>{{ product.name}}</td>
-        <td>{{ product.price}}</td>
-        <td>{{ product.productInfo.mass}}</td>
-    </tr>
-</table>
+<nav>
+    <ul class="navigationProduct">
+        <li class="cat btn-default" id="junk" (click) = "changeCat($event)" (click) =  "getproductsByCat($event)">Junk</li>
+        <li class="cat btn-default" id="entree" (click) = "changeCat($event)" (click) = "getproductsByCat($event)">Entrées</li>
+        <li class="cat btn-default" id="legume" (click) = "changeCat($event)" (click) = "getproductsByCat($event)" >Légumes</li>
+        <li class="cat btn-default" id="plat" (click) = "changeCat($event)" (click) =  "getproductsByCat($event)">Plat</li>
+        <li class="cat btn-default" id="laitage" (click) = "changeCat($event)" (click) = "getproductsByCat($event)" >Laitages</li>
+        <li class="cat btn-default" id="fruit" (click) = "changeCat($event)" (click) = "getproductsByCat($event)" >Fruits</li>
+        <li class="cat btn-default" id="dessert" (click) = "changeCat($event)" (click) = "getproductsByCat($event)" >Desserts</li>
+    </ul>
+    </nav>
+
+
+
+    <div class="vitForm" *ngIf="catPlat == 'legume' || catPlat == 'fruit'">
+        <p>Du mal à choisir quels fruits et légumes ajouter à votre alimentation ? <br> 
+        Cliquez le boutton ci-dessous pour les afficher du plus ou moins vitaminé ! </p>
+        <button (click)="orderByVit()">Go</button>
+    </div>
+
+
+
+    <form  class="macroForm" *ngIf="catPlat == 'plat' || catPlat=='junk'">
+        <h3>Nutriments pour 100g</h3>
+    <div class="intervalFlex">
+        <div  class="interval">
+            <h4>Calories</h4>
+            <div class="inpInterval">
+                <div>
+                    <label for="minCalo">Au minimum : </label>
+                    <input  (change)="onChangeminCal($event)" id="minCalo" type="number" name="minCalo" [placeholder]="minimalCalo" [(ngModel)]="minCalo">
+                </div>
+                <div>
+                    <label for="maxCalo">Au maximum : </label>
+                <input  (change)="onChangemaxCal($event)" id="maxCalo" type="number" name="maxCalo" [placeholder]="maximalCalo" [(ngModel)]="maxCalo">
+                </div>
+            </div>
+            
+        </div>
+        <div  class="interval">
+            <h4>Glucides</h4>
+            <div class="inpInterval">
+                <div>
+                    <label for="minCarb">Au minimum : </label>
+                <input  (change)="onChangeminCarb($event)" id="minCarb" type="number" name="minCarb" [placeholder]="minimalCarb" [(ngModel)]="minCarb">
+                </div>
+                <div>
+                    <label for="maxCarb">Au maximum : </label>
+                <input  (change)="onChangemaxCarb($event)" id="maxCarb" type="number" name="maxCarb" [placeholder]="maximalCarb" [(ngModel)]="maxCarb">
+                </div>
+            </div>
+        </div>
+    
+        <div class="interval">
+            <h4>Protéines</h4>
+            <div class="inpInterval">
+                <div>
+                    <label for="minProt">Au minimum : </label>
+                    <input   (change)="onChangeminProt($event)" id="minProt" type="number" name="minProt" [placeholder]="minimalProt" [(ngModel)]="minProt">
+                </div>
+                <div>
+                    <label for="maxProt">Au maximum : </label>
+                    <input  (change)="onChangemaxProt($event)" id="maxProt" type="number" name="maxProt" [placeholder]="maximalProt" [(ngModel)]="maxProt">
+                </div>
+            </div>
+        </div>
+    
+        <div  class="interval">
+            <h4>Fibres</h4>
+            <div class="inpInterval">
+                <div>
+                    <label for="minFib">Au minimum : </label>
+                    <input  (change)="onChangeminFib($event)"  id="minFib" type="number" name="minFib" [placeholder]="minimalFib" [(ngModel)]="minFib">
+                </div>
+                <div>
+                    <label for="maxFib">Au maximum : </label>
+                    <input  (change)="onChangemaxFib($event)" id="maxFib" type="number" name="maxFib" [placeholder]="maximalFib" [(ngModel)]="maxFib">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="croissant " id="croissant">
+            <p class="croiDecroi">Le moins possible de ces nutriments ?</p>
+            <div class="croissantFlex">
+                <button (click) = "changeButCroissant($event)" (click) = "lessSugar()" class="butCroissant btn-default">Sucre</button>
+                <button (click) = "changeButCroissant($event)" (click) = "lessFat()" class="butCroissant btn-default">Gras</button>
+                <button (click) = "changeButCroissant($event)" (click) = "lessSatu()" class="butCroissant btn-default">Gras Saturé</button>
+                <button (click) = "changeButCroissant($event)" (click) = "lessSodium()" class="butCroissant btn-default">Sel</button>
+            </div>
+        </div>
+    </form>  
+
+
+<div *ngIf="vitOrder == false" class="products">
+    <div class="product" *ngFor = "let product of products">
+        <div class="description">
+        <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+          
+            <p class="name">{{product.name}}</p> 
+            <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+            <p class="price">{{ product.price}} $ </p>
+            <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+        </div>
+        <!-- <button (click) = "details(product.id)">détails</button> -->
+        <div class="action">
+            <button class="btn-default" (click) = "details(product.id)">Details</button>
+            <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="vitOrder == true" class="productsByVit">
+    <p>Les plus vitaminés</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsAverageVit">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <p>Vitamine A</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsA">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <p>Vitamine B</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsB">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <p>Vitamine C</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsC">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <p>Vitamine E</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsE">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <p>Vitamine K</p>
+    <div class="products">
+        <div class="product" *ngFor = "let product of productsK">
+            <div class="description">
+            <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+                <p class="name">{{product.name}}</p> 
+                <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+                <p class="price">{{ product.price}} $ </p>
+                <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+            </div>
+            <!-- <button (click) = "details(product.id)">détails</button> -->
+            <div class="action">
+                <button class="btn-default" (click) = "details(product.id)">Details</button>
+                <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

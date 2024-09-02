@@ -1,0 +1,120 @@
+<h1>Fiche produit <br> {{product.name}}</h1>
+
+<div class="prodContainer">
+    <div class="product">
+        <img class="prodImg" src='{{ "/assets/img/" + product.img  }}'>
+        <div class="description">
+            <h2>{{product.name}}</h2>
+            <p id="prodPrice">{{product.price}} $</p>
+            <p id="prodPricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg</p> <!--https://www.quora.com/How-do-I-limit-the-decimal-places-in-angular2--> 
+        </div>
+    </div>
+    
+    <h2>Informations nutrition</h2>
+    <div class="infosCont">
+
+    <div class="macro infos">
+        <div class="columnsContainer">
+            <div class="categorie">
+                <p class="title name">Macros</p>
+                <p class="name">Energie (kcal)</p>
+                <p class="name">Glucides (g)</p>
+                <p class="name">Sucres (g)</p>
+                <p  class="name">Gras (g)</p>
+                <p class="name">Dont saturés (g)</p>
+                <p class="name">Protéines (g)</p>
+                <p class="name">Fibres (g)</p>
+                <p class="name">Sodium (g)</p>
+            </div>
+            <div>
+                <p class="title extra">  Pour 100g  </p>
+                <p class="name"> {{product.pm.calo}}</p>
+                <p class="name">{{product.pm.carb}}</p>
+                <p class="name">{{product.pm.sug}}</p>
+                <p class="name">{{product.pm.fat}}</p>
+                <p class="name">{{product.pm.satu}}</p>
+                <p class="name">{{product.pm.prot}}</p>
+                <p class="name">{{product.pm.fib}}</p> 
+                <p class="name">{{product.pm.sod}}</p> 
+            </div>
+            <div>
+                <p class="title extra">Au total</p>
+                <p class="name"> {{(product.pm.calo * product.pm.mass) / 100 }}</p>
+                <p class="name">{{(product.pm.carb * product.pm.mass) / 100}}</p>
+                <p class="name">{{(product.pm.sug * product.pm.mass) /100}}</p>
+                <p class="name">{{(product.pm.fat * product.pm.mass) /100}}</p>
+                <p class="name">{{(product.pm.satu * product.pm.mass) /100}}</p>
+                <p class="name">{{(product.pm.prot * product.pm.mass) /100 }}</p>
+                <p class="name">{{(product.pm.fib * product.pm.mass) / 100}}</p> 
+                <p class="name">{{(product.pm.sod * product.pm.mass) / 100}}</p> 
+            </div>
+        </div>
+    </div>
+    <div class="vitamines infos" >
+        <div class="columnsContainer">
+            <div class="categorie">
+                <p class="title extra">Vitamines</p>
+                <p>A</p>
+                <p>B</p>
+                <p>C</p>
+                <p>D</p>
+                <p>E</p>
+                <p>K</p>
+            </div>
+            <div>
+                <p class="title name extra">Pour 100g</p>
+                <p class="name"> {{product.productVitamin.a}}</p>
+                <p class="name"> {{product.productVitamin.b}}</p>
+                <p class="name"> {{product.productVitamin.c}}</p>
+                <p class="name"> {{product.productVitamin.d}}</p>
+                <p class="name"> {{product.productVitamin.e}}</p>
+                <p class="name"> {{product.productVitamin.k}}</p>
+            </div>
+            <div>
+                <p class="title extra">Au total</p>
+                <p class="nb"> {{(product.productVitamin.a * product.pm.mass) / 100 }}</p>
+                <p class="nb">{{(product.productVitamin.b * product.pm.mass) / 100}}</p>
+                <p class="nb">{{(product.productVitamin.c * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.productVitamin.d * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.productVitamin.e * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.productVitamin.k * product.pm.mass) /100 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="mineraux infos" *ngIf="product.pmin.cal || product.pmin.cui || product.pmin.pho || product.pmin.pot 
+    || product.pmin.cal || product.pmin.fer || product.pmin.mag || product.pmin.zin">
+        <div class="columnsContainer">
+            <div class="categorie">
+                <p class="title name extra">Minéraux</p>
+                <p class="name">Calcium</p>
+                <p class="name">Cuivre</p>
+                <p class="name">Fer</p>
+                <p class="name">Magnesium</p>
+                <p class="name">Phosphore</p>
+                <p class="name">Potassium</p>
+                <p class="name">Zinc</p>
+            </div>
+            <div>
+                <p class="title extra">Pour 100g</p>
+                <p class="nb"> {{product.pmin.cal}}</p>
+                <p class="nb">{{product.pmin.cui}}</p>
+                <p class="nb">{{product.pmin.fer}}</p>
+                <p class="nb">{{product.pmin.mag}}</p>
+                <p class="nb">{{product.pmin.pho}}</p>
+                <p class="nb">{{product.pmin.pot}}</p>
+                <p class="nb">{{product.pmin.zin}}</p> 
+            </div>
+            <div>
+                <p class="title extra">Au total</p>
+                <p class="nb"> {{(product.pmin.cal * product.pm.mass) / 100 }}</p>
+                <p class="nb">{{(product.pmin.cui * product.pm.mass) / 100}}</p>
+                <p class="nb">{{(product.pmin.fer * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.pmin.mag * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.pmin.pho * product.pm.mass) /100}}</p>
+                <p class="nb">{{(product.pmin.pot * product.pm.mass) /100 }}</p>
+                <p class="nb">{{(product.pmin.zin * product.pm.mass) / 100}}</p> 
+            </div>
+        </div>
+    </div>
+</div>
+</div>

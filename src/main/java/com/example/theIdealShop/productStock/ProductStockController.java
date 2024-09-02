@@ -1,17 +1,14 @@
 package com.example.theIdealShop.productStock;
 
-import com.example.theIdealShop.product.Product;
-import com.example.theIdealShop.productInfo.ProductInfo;
-import com.example.theIdealShop.productInfo.ProductInfoService;
-import com.example.theIdealShop.productStock.ProductStock;
-import com.example.theIdealShop.productStock.ProductStockService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path="api/v1/productStock")

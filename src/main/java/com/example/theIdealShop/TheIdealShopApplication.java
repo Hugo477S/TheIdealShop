@@ -1,30 +1,22 @@
 package com.example.theIdealShop;
 
-import com.example.theIdealShop.domain.Notation;
-import com.example.theIdealShop.product.Product;
-import com.example.theIdealShop.product.ProductRepository;
-import com.example.theIdealShop.productInfo.ProductInfo;
-import com.example.theIdealShop.productStock.ProductStock;
-import com.example.theIdealShop.labels.Labels;
-import com.example.theIdealShop.productInfo.ProductInfoRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
-import java.time.LocalDate;
+import com.example.theIdealShop.product.ProductRepository;
 
-
-
+@ComponentScan()
 @SpringBootApplication
 public class TheIdealShopApplication {
 
+	
 	public static void main(String[] args) {
 		ConfigurableApplicationContext configurableApplicationContext =
 		SpringApplication.run(TheIdealShopApplication.class, args);
 		ProductRepository productRepository = configurableApplicationContext.getBean(ProductRepository.class);
-		ProductInfoRepository productInfoRepository = configurableApplicationContext.getBean(ProductInfoRepository.class);
-
-		Product burger = new Product(
+	/* 	Product burger = new Product(
 				"burger",
 				1.0,
 				Notation.VeryGood
@@ -153,11 +145,7 @@ public class TheIdealShopApplication {
 			product
 		);
 		product.setLabels(labels);
-		productRepository.save(product);
-
-
+		productRepository.save(product);*/
 	}
-
-
-
 }
+

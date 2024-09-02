@@ -1,43 +1,40 @@
 package com.example.theIdealShop.productInfo;
 
-import com.example.theIdealShop.productInfo.ProductInfo;
-import com.example.theIdealShop.productInfo.ProductInfoRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ProductInfoService {
 
-    private final ProductInfoRepository productInfoRepository;
+    private final PMRepository pmRepository;
     @Autowired
-    public ProductInfoService(ProductInfoRepository productInfoRepository) {
-        this.productInfoRepository = productInfoRepository;
+    public ProductInfoService(PMRepository pmRepository) {
+        this.pmRepository = pmRepository;
     }
 
-    public List<ProductInfo> getProductsInfos(){
-        return productInfoRepository.findAll();
+    public List<PM> getProductsInfos(){
+        return pmRepository.findAll();
     }
 
     public void deleteProductInfo(Long id, Date received, Date put_on_shelf, Date dop) {
-        boolean exists = productInfoRepository.existsById(id);
+        boolean exists = pmRepository.existsById(id);
         if (!exists) {
             throw new IllegalStateException("ProductInfo with id " + id + "doesn't exist");
         }
 
-        productInfoRepository.deleteById(id);
+        pmRepository.deleteById(id);
     }
 
-    public void addNewProductInfo(ProductInfo productInfo) {
+    public void addNewProductInfo(PM productInfo) {
      /*    Optional<ProductInfo> productInfoOptional = productInfoRepository
                 .findProductInfoByName(productInfo.getName());
         if(productInfoOptional.isPresent()) {
             throw new IllegalStateException("Product already there !");
         }*/
-        productInfoRepository.save(productInfo);
+        pmRepository.save(productInfo);
     }
 }

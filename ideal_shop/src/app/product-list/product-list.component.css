@@ -1,0 +1,179 @@
+p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.navigationProduct {
+    padding-left: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-default {
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+}
+
+.btn-change {
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+    background-color: blue;
+    color: white;
+}
+
+.macroForm {
+    padding-top: 1.6em;
+    border: 1px solid blue;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.intervalFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.interval {
+    width: 50%;
+    text-align: center;
+    border: 1px solid blue;
+    padding-bottom: 1em;
+}
+
+.interval:nth-child(1) {
+    border-right: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.interval:nth-child(2) {
+    border-right: 0px;
+
+}
+
+.interval:nth-child(3) {
+    border-left: 0px;
+}
+
+.interval:nth-child(4) {
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+}
+
+h4 {
+    margin-bottom: 0.6em;
+    margin-top: 1em;
+}
+
+.inpInterval {
+    display: flex;
+    justify-content: center;
+}
+
+.inpInterval input {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.croissant {
+    border: blue 1px solid;
+    border-radius: 25px;
+    width: 34%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin-top: 0.6em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.croissantFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.croiDecroi {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+
+
+.products {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.productsByVit {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.product {
+    justify-content: center;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 4px;
+}
+
+.name {
+    font-size: 15px;
+}
+
+.name, .price {
+    font-weight: 500;
+}
+
+.price {
+    font-size: 20px;
+}
+
+.action {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.action span {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.action button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.img {
+    width: 200px;
+    height: 180px;
+}

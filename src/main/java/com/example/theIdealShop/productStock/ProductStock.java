@@ -1,15 +1,21 @@
 package com.example.theIdealShop.productStock;
 
 
-import jakarta.persistence.*;
+import java.time.LocalDate;
 
 import com.example.theIdealShop.product.Product;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-import org.springframework.context.annotation.Primary;
-
-import java.time.LocalDate;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="product_stock")
@@ -26,12 +32,15 @@ public class ProductStock {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     @Column(name="received")
     private LocalDate received;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     @Column(name="pos")
     private LocalDate pos;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     @Column(name="dop")
     private LocalDate dop;
@@ -49,7 +58,7 @@ public class ProductStock {
     @Column(name="deliName")
     private String deliName;
     @OneToOne
-    @JoinColumn(name = "productName", referencedColumnName = "name")
+    @JoinColumn(name = "productName", referencedColumnName = "id")
     private Product product;
 
 
