@@ -1,6 +1,9 @@
-FROM maven:3.8.3-openjdk-17 AS build
+FROM ubuntu:latest AS build
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
 COPY . .
 RUN mvn clean package -DskipTests
+
 
 FROM openjdk:17.0.1-jdk-slim
 COPY -from=build /target/*.jarjar demo.jar/
