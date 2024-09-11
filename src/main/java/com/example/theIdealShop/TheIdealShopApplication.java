@@ -38,7 +38,7 @@ public class TheIdealShopApplication {
 		productInfoRepository.save(burgerInfo);
 
 		ProductStock burgerStock = new ProductStock(
-				LocalDate.of(2020, 12,1), // ! yearToWrite : yearWanted - 1900
+				LocalDate.of(2020, 12,1), // ! yearToWrite : yearWanted - 1900?prepareThreshold=0
 				LocalDate.of(2020, 12,1),
 				LocalDate.of(2020, 12,1),
 				12,
