@@ -35,6 +35,13 @@ public class ProductController {
     public List<Product> getProducts(){ //
         return productService.getProducts();
     }
+
+    @CrossOrigin
+    @GetMapping("/")
+    public String cronJob(){ 
+        return "a";
+    }
+
     @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Product> getProductById(@PathVariable("id") Integer id){
