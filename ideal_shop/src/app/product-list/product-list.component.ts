@@ -87,6 +87,7 @@ export class ProductListComponent implements OnInit{
         this.cat[i].className = "cat btn-default";
       }
     }
+    this.vitOrder = false;
   }
 
   changeButCroissant(event: any) {

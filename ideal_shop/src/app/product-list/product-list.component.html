@@ -10,15 +10,11 @@
     </ul>
     </nav>
 
-
-
     <div class="vitForm" *ngIf="catPlat == 'legume' || catPlat == 'fruit'">
         <p>Du mal à choisir quels fruits et légumes ajouter à votre alimentation ? <br> 
         Cliquez le boutton ci-dessous pour les afficher du plus ou moins vitaminé ! </p>
-        <button (click)="orderByVit()">Go</button>
+        <button class="btn-default" (click)="orderByVit()">Go</button>
     </div>
-
-
 
     <form  class="macroForm" *ngIf="catPlat == 'plat' || catPlat=='junk'">
         <h3>Nutriments pour 100g</h3>
@@ -92,7 +88,7 @@
     </form>  
 
 
-<div *ngIf="vitOrder == false" class="products">
+<div class="products" *ngIf="vitOrder == false">
     <div class="product" *ngFor = "let product of products">
         <div class="description">
         <img class="img" src='{{ "/assets/img/" + product.img  }}'>
@@ -109,8 +105,8 @@
         </div>
     </div>
 </div>
-<div *ngIf="vitOrder == true" class="productsByVit">
-    <p>Les plus vitaminés</p>
+<div *ngIf="vitOrder == true && catPlat == 'legume'" class="productsByVit">
+    <p class="voTitle">Les plus vitaminés</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsAverageVit">
             <div class="description">
@@ -127,7 +123,7 @@
             </div>
         </div>
     </div>
-    <p>Vitamine A</p>
+    <p class="voTitle">Vitamine A</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsA">
             <div class="description">
@@ -144,7 +140,7 @@
             </div>
         </div>
     </div>
-    <p>Vitamine B</p>
+    <p class="voTitle">Vitamine B</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsB">
             <div class="description">
@@ -161,7 +157,7 @@
             </div>
         </div>
     </div>
-    <p>Vitamine C</p>
+    <p class="voTitle">Vitamine C</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsC">
             <div class="description">
@@ -178,7 +174,7 @@
             </div>
         </div>
     </div>
-    <p>Vitamine E</p>
+    <p class="voTitle">Vitamine E</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsE">
             <div class="description">
@@ -195,7 +191,7 @@
             </div>
         </div>
     </div>
-    <p>Vitamine K</p>
+    <p class="voTitle">Vitamine K</p>
     <div class="products">
         <div class="product" *ngFor = "let product of productsK">
             <div class="description">

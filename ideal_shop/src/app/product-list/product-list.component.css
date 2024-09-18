@@ -8,7 +8,7 @@ p {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -114,6 +114,25 @@ h4 {
 }
 
 
+.vitForm {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vitForm p  {
+    margin-bottom: 1.2em;
+}
+
+.vitForm button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2em;
+}
+
+
+
 
 .products {
     margin-left: auto;
@@ -126,7 +145,16 @@ h4 {
 .productsByVit {
     display: flex;
     flex-direction: column;
-    
+}
+
+.voTitle {
+    font-size: 18px;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.productsByVit .products {
+    margin-bottom: 1.6em;
 }
 
 .product {
