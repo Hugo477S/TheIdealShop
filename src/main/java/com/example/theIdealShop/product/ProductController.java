@@ -36,8 +36,7 @@ public class ProductController {
         return productService.getProducts();
     }
 
-    @CrossOrigin
-    @GetMapping("/")
+    @GetMapping("/a")
     public String cronJob(){ 
         return "a";
     }
