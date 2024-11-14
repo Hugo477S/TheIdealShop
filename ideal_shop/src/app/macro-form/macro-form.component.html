@@ -1,0 +1,71 @@
+<h3>Nutriments pour 100g</h3>
+<div class="intervalFlex">
+    <div class="interval">
+        <h4>Calories</h4>
+        <div class="inpInterval">
+            <div>
+                <label for="minCalo">Au minimum : </label>
+                <input class="inp" id="minCalo" type="number" name="minCalo" [placeholder]="minimalCalo" [(ngModel)]="minCalo">
+            </div>
+            <div>
+                <label for="maxCalo">Au maximum : </label>
+            <input class="inp" id="maxCalo" type="number" name="maxCalo" [placeholder]="maximalCalo" [(ngModel)]="maxCalo">
+            </div>  
+        </div>
+        <button class="filter btn-default" (click)="onCalorieFilterClick();">Filter by <br> Calories</button>  
+    </div>
+    <div  class="interval">
+        <h4>Glucides</h4>
+        <div class="inpInterval">
+            <div>
+                <label for="minCarb">Au minimum : </label>
+            <input class="inp" id="minCarb" type="number" name="minCarb" [placeholder]="minimalCarb" [(ngModel)]="minCarb">
+            </div>
+            <div>
+                <label for="maxCarb">Au maximum : </label>
+            <input class="inp" id="maxCarb" type="number" name="maxCarb" [placeholder]="maximalCarb" [(ngModel)]="maxCarb">
+            </div> 
+        </div>
+        <button class="filter btn-default" (click)="onCarbFilterClick();">Filter by <br> Carbs</button> 
+    </div>
+
+    <div class="interval">
+        <h4>Protéines</h4>
+        <div class="inpInterval">
+            <div>
+                <label for="minProt">Au minimum : </label>
+                <input class="inp" id="minProt" type="number" name="minProt" [placeholder]="minimalProt" [(ngModel)]="minProt">
+            </div>
+            <div>
+                <label for="maxProt">Au maximum : </label>
+                <input class="inp" id="maxProt" type="number" name="maxProt" [placeholder]="maximalProt" [(ngModel)]="maxProt">
+            </div>
+        </div>
+        <button class="filter btn-default" (click)="onProtFilterClick();">Filter by <br> Proteins</button>  
+    </div>
+
+    <div class="interval">
+        <h4>Fibres</h4>
+        <div class="inpInterval">
+            <div>
+                <label for="minFib">Au minimum : </label>
+                <input class="inp" id="minFib" type="number" name="minFib" [placeholder]="minimalFib" [(ngModel)]="minFib">
+            </div>
+            <div>
+                <label for="maxFib">Au maximum : </label>
+                <input class="inp" id="maxFib" type="number" name="maxFib" [placeholder]="maximalFib" [(ngModel)]="maxFib">
+            </div>
+        </div>
+        <button class="filter btn-default" (click)="onFiberFilterClick();">Filter by <br> Fibers</button>  
+    </div>
+</div>
+
+<div class="croissant " id="croissant">
+    <p class="croiDecroi">Le moins possible de ces nutriments ?</p>
+    <div class="croissantFlex">
+        <button (click) = "changeButCroissant($event)" (click) = "lessSugar(this.products)" class="btn-default">Sucre</button>
+        <button (click) = "changeButCroissant($event)" (click) = "lessFat(this.products)" class="btn-default">Gras</button>
+        <button (click) = "changeButCroissant($event)" (click) = "lessSatu(this.products)" class="btn-default">Gras Saturé</button>
+        <button (click) = "changeButCroissant($event)" (click) = "lessSodium(this.products)" class="btn-default">Sel</button>
+    </div>
+</div>

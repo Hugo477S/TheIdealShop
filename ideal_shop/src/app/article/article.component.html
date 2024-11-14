@@ -1,0 +1,14 @@
+<div class="product">
+    <div class="description">
+    <img class="img" src='{{ "/assets/img/" + product.img  }}'>
+      
+        <p class="name">{{product.name}}</p> 
+        <p class="mass">{{product.pm.mass >= 1000 ? product.pm.mass/1000 + " kg" : product.pm.mass + " g"}}</p>
+        <p class="price">{{ product.price}} $ </p>
+        <p class="pricePerKilo">{{product.price / (product.pm.mass/1000)| number:'1.2-2' }} $/kg </p> 
+    </div>
+    <div class="action">
+        <button class="btn-default" (click) = "details(product.id)">Details</button>
+        <button class="btn-default" (click) = "buy(product.id)">Acheter</button>
+    </div>
+</div>

@@ -6,9 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticleComponent } from './article/article.component';
 import { CartComponent } from './cart/cart.component';
+import { MacroFormComponent } from './macro-form/macro-form.component';
+import { NavigProductComponent } from './navig-product/navig-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
+import { VitFormComponent } from './vit-form/vit-form.component';
 
 
 
@@ -17,7 +21,11 @@ import { ProductComponent } from './product/product.component';
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    ArticleComponent,
+    VitFormComponent,
+    MacroFormComponent,
+    NavigProductComponent
   ],
   imports: [
     FormsModule,
