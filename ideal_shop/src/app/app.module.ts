@@ -13,6 +13,7 @@ import { NavigProductComponent } from './navig-product/navig-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { VitFormComponent } from './vit-form/vit-form.component';
+import { LaitageFormComponent } from './laitage-form/laitage-form.component';
 
 
 
@@ -25,7 +26,8 @@ import { VitFormComponent } from './vit-form/vit-form.component';
     ArticleComponent,
     VitFormComponent,
     MacroFormComponent,
-    NavigProductComponent
+    NavigProductComponent,
+    LaitageFormComponent
   ],
   imports: [
     FormsModule,

@@ -27,7 +27,6 @@ ngOnInit(): void {
 ngOnChanges() {
   if(this.inputFromParent) {
     this.products = this.inputFromParent[0];
-    console.log(this.products);
   }
 }
 
@@ -43,12 +42,43 @@ productsAverageVit!: Product[];
 orderByVit() {
   this.vitOrder = !this.vitOrder;
     this.productsA = this.products.sort(this.compareA); // Doesnt work xitout the slice !?
-    this.productsB = this.products.slice().sort(this.compareB);
-    this.productsC = this.products.slice().sort(this.compareC);
-    this.productsE = this.products.slice().sort(this.compareE);
-    this.productsK = this.products.slice().sort(this.compareK);
-    this.productsAverageVit = this.products.slice().sort(this.compareVitAverage);
+    console.log(this.productsA);
+    this.productsB = this.products.sort(this.compareB);
+    this.productsC = this.products.sort(this.compareC);
+    this.productsE = this.products.sort(this.compareE);
+    this.productsK = this.products.sort(this.compareK);
+    this.productsAverageVit = this.products.sort(this.compareVitAverage);
+    this.productsA = this.retireClones(this.productsA);
+    this.productsB = this.retireClones(this.productsB);
+    this.productsC = this.retireClones(this.productsC);
+    this.productsE = this.retireClones(this.productsE);
+    this.productsK = this.retireClones(this.productsK);
+    this.productsAverageVit = this.retireClones(this.productsAverageVit);
     this.productsVit.emit([this.productsA, this.productsB, this.productsC, this.productsE, this.productsK, this.productsAverageVit]);
+}
+
+retireClones(array: Product[]){
+  let indexes = [];
+  for (let i=0; i<array.length; i++) {
+    let productName = array[i].name;
+    let firstWord = productName.split(" ")[0];
+    for (let j=i+1; j<array.length; j++) {
+      let productNameJ = array[j].name;
+      let firstWordJ = productNameJ.split(" ")[0];
+      if(firstWordJ == firstWord) {
+        indexes.push(j);
+      }
+    }
+  }
+  this.deleteClones(array, indexes);
+  return array;
+}
+
+deleteClones(array: Product[], indexes: number[]) {
+  indexes.forEach((index => {
+    array.splice(index, 1);
+  }))
+  return array;
 }
 
 compareA( a:Product, b:Product ) {

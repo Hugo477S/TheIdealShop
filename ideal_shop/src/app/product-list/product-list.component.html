@@ -1,6 +1,10 @@
 <app-navig-product (dataFromNav)="catPlatHandler($event)"></app-navig-product>
 
 
+<div *ngIf="catPlat == 'laitage'">
+    <app-laitage-form></app-laitage-form>
+</div>
+
 
 <div class="vitForm" *ngIf="catPlat == 'legume' || catPlat == 'fruit'">
     <app-vit-form (productsVit)="receiveProductsFromVit($event)"  [inputFromParent]="[products, catPlat]"></app-vit-form>
