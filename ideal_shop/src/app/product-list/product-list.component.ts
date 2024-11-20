@@ -31,10 +31,6 @@ export class ProductListComponent implements OnInit{
 
   catPlat: string = "";
 
-  ngOnChanges(){ // S'active quand @Input change
-
-  }
-
   SatuClicked: Boolean = false;
   FatClicked: Boolean = false;
   SugarClicked: Boolean = false;
@@ -75,14 +71,16 @@ export class ProductListComponent implements OnInit{
   }
 
   receiveProductsFromVit($event:any[]) {
-    console.log($event);
     this.vitOrder = !this.vitOrder;
     this.productsA = $event[0];
     this.productsB = $event[1];
     this.productsC = $event[2];
     this.productsE = $event[3];
     this.productsK = $event[4];
+  }
 
+  receiveProductsFromLaitage($event:any[]) {
+    this.products = $event;
   }
 
   ngOnInit(): void {
@@ -102,24 +100,6 @@ export class ProductListComponent implements OnInit{
        this.products = data;
      })
    }
-
-
- // Vitamines
-
-
-
-// changeCat(event: any) {
-//   let index = this.cat.indexOf(event.target);
-//   for(let i=0; i<this.cat.length; i++) {
-//     if(this.cat.indexOf(this.cat[i]) == index && this.cat[i].className == "cat btn-default") {
-//       this.cat[i].className = "cat btn-change";
-//     } else {
-//       this.cat[i].className = "cat btn-default";
-//     }
-//   }
-//   this.vitOrder = false;
-// }
-
 
 
 }
