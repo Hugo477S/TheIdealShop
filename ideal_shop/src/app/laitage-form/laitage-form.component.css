@@ -12,6 +12,24 @@
     color: white;
 }
 
+.navigationProduct {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.6em;
+    padding-left: 0;
+    width: 20%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navigationProduct li {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+}
+
 .filter {
     margin-top: 0.8em;
     font-size: 14px;
@@ -42,24 +60,15 @@ h4 {
 }
 
 .interval:nth-child(1) {
-    border-radius: 15px 0 0 0; 
+    border-radius: 15px 0 0 15px; 
     border-right: 0px;
-    border-bottom: 0px;
 }
 
 .interval:nth-child(2) {
-    border-radius: 0 15px 0 0; 
+    border-radius: 0 15px 15px 0; 
 }
 
-.interval:nth-child(3) {
-    border-radius: 0 0 0 15px; 
-}
 
-.interval:nth-child(4) {
-    border-radius: 0 0 15px 0; 
-    border-left: 0px;
-    border-top: 0px;
-}
 
 .inpInterval {
     display: flex;
@@ -99,15 +108,21 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.advSearch {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
 .croissant {
     border: blue 1px solid;
     border-radius: 25px;
-    width: 45%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 30%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-top: 0.6em;
     margin-bottom: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
 }
 
 .croissantFlex {

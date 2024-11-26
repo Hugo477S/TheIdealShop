@@ -11,7 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -41,7 +41,8 @@ public class PV {
     @Column(name= "k")
     private Integer k;
 
-    @OneToOne(mappedBy = "pv", cascade = CascadeType.ALL) 
+    @ManyToOne(cascade = CascadeType.ALL) // it's a reference to productInfo in Product
+    //@MapsId
     @JoinColumn(name = "productId", referencedColumnName = "id")
     private Product product;
 

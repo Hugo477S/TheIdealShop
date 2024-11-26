@@ -47,7 +47,7 @@ export class ProductListComponent implements OnInit{
   replaceProducts(array: Product[]) {
     this.products = array;
   }
-
+/*
   replaceProductsFromVit(array: any[]) {
     this.vitOrder = !this.vitOrder;
     this.productsA = array[0];
@@ -57,7 +57,7 @@ export class ProductListComponent implements OnInit{
     this.productsK = array[4];
     this.productsAverageVit = array[5];
   }
-  
+  */
   catPlatHandler(catPlat: string) {
     this.catPlat = catPlat;
     this.productService.getProductsByCat(this.catPlat).subscribe(data=> {
@@ -77,6 +77,8 @@ export class ProductListComponent implements OnInit{
     this.productsC = $event[2];
     this.productsE = $event[3];
     this.productsK = $event[4];
+    this.productsAverageVit = $event[5];
+
   }
 
   receiveProductsFromLaitage($event:any[]) {

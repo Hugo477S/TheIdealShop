@@ -1,13 +1,18 @@
-<ul>
+<ul class="navigationProduct">
     <li>
-        Fromages
+        <button class="btn-default" (click)="cheeseClick()">
+            Fromages
+        </button>
     </li>
     <li>
-        Yaourts
+        <button class="btn-default" (click)="yaourtClick()">
+            Yaourts
+        </button>
     </li>
 </ul>
 
-<h3>Nutriments pour 100g</h3>
+<div *ngIf="yaourt === true || fromage === true"> <!--Ne peut pas récupérer les bouttons dans le tableau d'éléments à cause de ça-->
+    <h3>Nutriments pour 100g</h3>
 <div class="intervalFlex">
     <div class="interval">
         <h4>Calories</h4>
@@ -39,25 +44,30 @@
     </div>
 </div>
 
-<div class="croissant " id="croissant">
-    <p class="croiDecroi">Retirer les produits trop gras ? <br> 
-    <span class="precision">Tout gras n'est pas forcément mauvais, même saturé ! <br>
-         Dans un yaourt, un taux entre 2% et 4% de MG est idéal</span></p>
-    <div class="croissantFlex">
-        <button (click)="noFat()" class="btn-default">On dégraisse !</button>
+<div class="advSearch">
+    <div class="croissant" id="croissant">
+        <p class="croiDecroi">Retirer les produits trop gras ? <br> 
+        <span class="precision">Tout gras n'est pas forcément mauvais, même saturé ! <br>
+            
+            Pour un {{yaourt ? 'yaourt' : 'fromage'}}, un taux {{yaourt ? 'entre 2% et 4% de MG' : 'inférieur à 20%'}} est idéal</span></p>
+        <div class="croissantFlex">
+            <button (click)="onFatClick()" class="btn-default">On dégraisse !</button>
+        </div>
+    </div>
+    <div class="croissant " id="croissant">
+        <p class="croiDecroi">Vous cherchez du calcium ? <br> 
+        <span class="precision">Cliquer sur ce bouton vous donnera les {{yaourt ? 'yaourts' : 'fromages'}} riches en calcium et autres oligo-éléments </span></p>
+        <div class="croissantFlex">
+            <button (click)="onCalciumClick()" class="btn-default">Go</button>
+        </div>
+    </div>
+    <div class="croissant " id="croissant">
+        <p class="croiDecroi">Des vitamines dans du {{yaourt ? 'yaourt' : 'fromage'}} ? <br> 
+        <span class="precision">Oui ! Mais c'est très inégal, cliquez ici pour une sélection vitaminée ! </span></p>
+        <div class="croissantFlex">
+            <button (click)="changeButCroissant($event)" (click)="onVitClick()" class="btn-default">Go</button>
+        </div>
     </div>
 </div>
-<div class="croissant " id="croissant">
-    <p class="croiDecroi">Vous cherchez du calcium ? <br> 
-    <span class="precision">Cliquer sur ce bouton vous donnera les yaourts riches en calcium et autres oligo-éléments </span></p>
-    <div class="croissantFlex">
-        <button (click)="moreCalcium()" class="btn-default">Go</button>
-    </div>
-</div>
-<div class="croissant " id="croissant">
-    <p class="croiDecroi">Des vitamines dans du yaourt ? <br> 
-    <span class="precision">Oui ! Mais c'est très inégal, cliquez ici pour une sélection vitaminée ! </span></p>
-    <div class="croissantFlex">
-        <button (click)="moreVitamins()" class="btn-default">Go</button>
-    </div>
-</div>
+
+</div >
