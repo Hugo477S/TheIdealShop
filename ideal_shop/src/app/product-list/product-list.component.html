@@ -1,5 +1,9 @@
 <app-navig-product (dataFromNav)="catPlatHandler($event)"></app-navig-product>
 
+<div *ngIf="explication == true">
+    <h1>hihouhi</h1>
+</div>
+
 
 <div class="laitForm" *ngIf="catPlat == 'laitage'">
     <app-laitage-form (laitProds)="receiveProductsFromLaitage($event)"  [inputFromParent]="[products, catPlat]"></app-laitage-form>

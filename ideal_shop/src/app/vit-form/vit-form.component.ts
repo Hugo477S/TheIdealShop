@@ -41,12 +41,14 @@ productsAverageVit!: Product[];
 
 orderByVit() {
   this.vitOrder = !this.vitOrder;
-    this.productsA = this.products.sort(this.compareA); // Doesnt work xitout the slice !?
-    console.log(this.productsA);
-    this.productsB = this.products.sort(this.compareB);
-    this.productsC = this.products.sort(this.compareC);
-    this.productsE = this.products.sort(this.compareE);
-    this.productsK = this.products.sort(this.compareK);
+  let interA = this.products;
+    this.productsA = this.products.toSorted(this.compareA);
+    this.productsB = this.products.toSorted(this.compareB);
+    this.productsC = this.products.toSorted(this.compareC);
+    this.productsE = this.products.toSorted(this.compareE);
+    this.productsK = this.products.toSorted(this.compareK);
+
+
     this.productsAverageVit = this.products.sort(this.compareVitAverage);
     this.productsA = this.retireClones(this.productsA);
     this.productsB = this.retireClones(this.productsB);

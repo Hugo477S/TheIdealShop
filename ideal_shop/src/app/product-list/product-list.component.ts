@@ -29,12 +29,16 @@ export class ProductListComponent implements OnInit{
   pm: Pm = new Pm;
   productVitamin: ProductVitamin = new ProductVitamin;
 
+
   catPlat: string = "";
+  explication: Boolean = true;
 
   SatuClicked: Boolean = false;
   FatClicked: Boolean = false;
   SugarClicked: Boolean = false;
   SodiumClicked: Boolean = false;
+
+
 
 
   @Output() childEmitter: EventEmitter<any[]> = new EventEmitter<any[]>(); // Array of products puis catPlat
@@ -47,17 +51,7 @@ export class ProductListComponent implements OnInit{
   replaceProducts(array: Product[]) {
     this.products = array;
   }
-/*
-  replaceProductsFromVit(array: any[]) {
-    this.vitOrder = !this.vitOrder;
-    this.productsA = array[0];
-    this.productsB = array[1];
-    this.productsC = array[2];
-    this.productsE = array[3];
-    this.productsK = array[4];
-    this.productsAverageVit = array[5];
-  }
-  */
+
   catPlatHandler(catPlat: string) {
     this.catPlat = catPlat;
     this.productService.getProductsByCat(this.catPlat).subscribe(data=> {
@@ -87,21 +81,10 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit(): void {
       this.vitOrder = false;
-      this.getProducts();
       this.cat = Array.from(document.getElementsByClassName("cat"));
       this.cart = [];
   }
 
-/*
-  cartPage(){
-    this.router.navigate(['', 'cart']);
-  }
-*/
-   private getProducts() {
-     this.productService.getProductsList().subscribe(data => {
-       this.products = data;
-     })
-   }
 
 
 }
