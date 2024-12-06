@@ -3,6 +3,12 @@ p {
     margin-bottom: 5px;
 }
 
+.tutoriel {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .macroForm, .vitForm {
     margin-left: auto;

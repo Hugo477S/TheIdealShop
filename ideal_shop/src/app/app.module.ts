@@ -14,6 +14,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { VitFormComponent } from './vit-form/vit-form.component';
 import { LaitageFormComponent } from './laitage-form/laitage-form.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 
 
@@ -27,7 +28,8 @@ import { LaitageFormComponent } from './laitage-form/laitage-form.component';
     VitFormComponent,
     MacroFormComponent,
     NavigProductComponent,
-    LaitageFormComponent
+    LaitageFormComponent,
+    TutorialComponent
   ],
   imports: [
     FormsModule,

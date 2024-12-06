@@ -1,0 +1,116 @@
+
+    <h1>Bienvenue dans le tutoriel !</h1>
+
+<p>Vitamines, calories, bon gras, mauvais gras ... Tellement d'informations à prendre en compte pour choisir ses produits ! 
+    <br>
+    Grâce à IdealShop, utilisez un système de tri intelligent pour composer simplement votre panier : 
+</p>
+<div class="buttons">
+    <button (click)="decrementTStep();">Prec</button>
+    <button (click)="incrementTStep();">Suiv</button>
+</div>
+
+<ul>
+    <li>Pour chaque type d'aliment, <span class="tuto tutorialStepOne">les éléments nutritifs</span> les plus importantes des produits et <span class="tuto tutorialStepTwo">leurs étendues</span> vous sont présentées.</li>
+    <li>Vous pouvez alors <span class="tuto tutorialStepThree">choisir une ou plusieurs valeurs</span>
+        , <span class="tuto tutorialStepThree"></span> puis <span class="tuto tutorialStepThreeRed">cliquez sur le boutton correspondant.</span></li>
+    <li>
+        <ul>
+            <li>les produits correspondants seront sélectionés !</li>
+            <li>Et à chaque recherche effectuée, <span class="tuto tutorialStepFour">les autres intervalles</span>  changent selon les aliments sélectionnés pour affiner votre recherche</li>
+        </ul>
+    </li>
+    <li>Enfin, une liste de bouttons permet de <span class="tuto tutorialStepFive">trier par exemple du plus sucré moins sucré</span>, ou de <span class="tuto tutorialStepFive">retirer des produits ne correspondant pas à vos attentes (Bien-être animal, allergies ...)</span>.</li>
+
+</ul>
+ 
+
+<div>
+<h3>Nutriments pour 100g</h3>
+<div class="intervalFlex">
+    <div class="interval">
+        <h4 class="tuto tutorialStepOne">Calories</h4>
+        <div class="inpInterval tuto tutorialStepTwo">
+            <div>
+                <label for="minCalo">Au minimum : </label>
+                <span class="spanInput tuto tutorialStepThreeBorder">
+                    <input class="inp" id="minCalo" type="number" name="minCalo" placeholder="74">
+                </span>
+               
+            </div>
+            <div>
+                <label for="maxCalo">Au maximum : </label>
+            <input class="inp" id="maxCalo" type="number" name="maxCalo" placeholder="469">
+            </div>  
+        </div>
+        <button class="filter btn-default tuto tutorialStepThreeRed" >Filter by <br> Calories</button>  
+    </div>
+    <div  class="interval">
+        <h4 class="tuto tutorialStepOne">Glucides</h4>
+        <div class="inpInterval tuto tutorialStepTwo">
+            <div>
+                <label for="minCarb">Au minimum : </label>
+                <span class="tuto tutorialStepFour">
+                    <input class="inp" id="minCarb" type="number" name="minCarb" placeholder="3.6">    
+                </span>
+            
+            </div>
+            <div>
+                <label for="maxCarb">Au maximum : </label>
+                <span class="tuto tutorialStepFourBorder">
+                    <input class="inp" id="maxCarb" type="number" name="maxCarb" placeholder="74">
+                </span>
+            </div> 
+        </div>
+        <button class="filter btn-default" >Filter by <br> Carbs</button> 
+    </div>
+
+    <div class="interval">
+        <h4 class="tuto tutorialStepOne">Protéines</h4>
+        <div class="inpInterval tuto tutorialStepTwo">
+            <div>
+                <label for="minProt">Au minimum : </label>
+                <span class="tuto tutorialStepFourBorder">
+                    <input class="inp" id="minProt" type="number" name="minProt" placeholder="2.5">
+                </span>
+            </div>
+            <div>
+                <label for="maxProt">Au maximum : </label>
+                <span class="tuto tutorialStepFourBorder">
+                    <input class="inp" id="maxProt" type="number" name="maxProt" placeholder="28">
+                </span>
+            </div>
+        </div>
+        <button class="filter btn-default">Filter by <br> Proteins</button>  
+    </div>
+
+    <div class="interval">
+        <h4 class="tuto tutorialStepOne">Fibres</h4>
+        <div class="inpInterval tuto tutorialStepTwo">
+            <div>
+                <label for="minFib">Au minimum : </label>
+                <span class="tuto tutorialStepFourBorder">
+                    <input class="inp" id="minFib" type="number" name="minFib" placeholder="0">
+                </span>
+            </div>
+            <div>
+                <label for="maxFib">Au maximum : </label>
+                <span class="tuto tutorialStepFourBorder">
+                    <input class="inp" id="maxFib" type="number" name="maxFib" placeholder="12">
+                </span>
+            </div>
+        </div>
+        <button class="filter btn-default">Filter by <br> Fibers</button>  
+    </div>
+</div>
+
+<div class="tuto tutorialStepFiveBorder croissant" id="croissant">
+    <p class="croiDecroi">Le moins possible de ces nutriments ?</p>
+    <div class="croissantFlex">
+        <button class="btn-default">Sucre</button>
+        <button class="btn-default">Gras</button>
+        <button class="btn-default">Gras Saturé</button>
+        <button class="btn-default">Sel</button>
+    </div>
+</div>
+</div>

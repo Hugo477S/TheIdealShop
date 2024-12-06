@@ -1,0 +1,188 @@
+.btn-default {
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+}
+
+.btn-change {
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+    background-color: blue;
+    color: white;
+}
+
+.buttons {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.6em;
+}
+
+
+.tutorialSurlignement {
+    animation: tutoBlue 2s linear 0s 1;
+}
+
+.tutorialSurlignementRed {
+    animation: tutoRed 2s linear 1.2s 1;
+}
+
+.tutorialBorder {
+    animation: tutoBorder 2s linear 0s 1;
+}
+
+.filter {
+    margin-top: 0.8em;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+h3 {
+    text-align: center;
+    font-size: 22px;
+}
+
+h4 {
+    margin-bottom: 0.6em;
+    margin-top: 1em;
+    font-size: 18px;
+}
+
+.intervalFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.interval {
+    width: 50%;
+    text-align: center;
+    border: 1px solid blue;
+    padding-bottom: 1em;
+}
+
+.interval:nth-child(1) {
+    border-radius: 15px 0 0 0; 
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.interval:nth-child(2) {
+    border-radius: 0 15px 0 0; 
+}
+
+.interval:nth-child(3) {
+    border-radius: 0 0 0 15px; 
+}
+
+.interval:nth-child(4) {
+    border-radius: 0 0 15px 0; 
+    border-left: 0px;
+    border-top: 0px;
+}
+
+.inpInterval {
+    display: flex;
+}
+
+.inpInterval div {
+    width: 50%;
+}
+
+/*!!! Faire en sorte de ne pas avoir la virgule  */
+label {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+input {
+    height: 18px;
+    margin-left: 10px;
+    width: 40px;
+    text-align: center;
+}
+
+
+
+/*Enlever les flèches*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.croissant {
+    border: blue 1px solid;
+    border-radius: 25px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.6em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.croissantFlex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.croiDecroi {
+    text-align: center;
+    margin-top: 0.8em;
+    margin-bottom: 1.6em;
+}
+
+.croissant button {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 0.8em 1.4em 0.8em;
+
+}
+
+
+@keyframes tutoBlue {
+    from {
+      background-color: white;
+    }
+    to {
+      background-color: aqua;
+      opacity: 40%;
+    }
+  }
+
+  @keyframes tutoRed {
+    from {
+      background-color: white;
+    }
+    to {
+      background-color: red;
+      opacity: 40%;
+    }
+  }
+
+  @keyframes tutoBorder {
+    0% {
+      border: 0px solid blue;
+    }
+    25% {
+      border: 6px solid blue;
+    }
+    50% {
+        border: 0px solid blue;
+      }
+    75% {
+    border: 6px solid blue;
+    }
+    100% {
+    border: 0px solid blue;
+    }
+  }
