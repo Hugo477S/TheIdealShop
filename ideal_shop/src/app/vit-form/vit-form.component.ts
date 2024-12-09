@@ -39,9 +39,12 @@ productsK!: Product[];
 productsAverageVit!: Product[];
 
 
+
+
 orderByVit() {
-  this.vitOrder = !this.vitOrder;
-  let interA = this.products;
+  
+  
+  if(!this.vitOrder) {
     this.productsA = this.products.toSorted(this.compareA);
     this.productsB = this.products.toSorted(this.compareB);
     this.productsC = this.products.toSorted(this.compareC);
@@ -50,13 +53,23 @@ orderByVit() {
 
 
     this.productsAverageVit = this.products.sort(this.compareVitAverage);
-    this.productsA = this.retireClones(this.productsA);
-    this.productsB = this.retireClones(this.productsB);
-    this.productsC = this.retireClones(this.productsC);
-    this.productsE = this.retireClones(this.productsE);
-    this.productsK = this.retireClones(this.productsK);
-    this.productsAverageVit = this.retireClones(this.productsAverageVit);
-    this.productsVit.emit([this.productsA, this.productsB, this.productsC, this.productsE, this.productsK, this.productsAverageVit]);
+    this.productsA = this.retireClones(this.productsA).splice(0,8);
+    this.productsB = this.retireClones(this.productsB).splice(0,8);
+    this.productsC = this.retireClones(this.productsC).splice(0,8);
+    this.productsE = this.retireClones(this.productsE).splice(0,8);
+    this.productsK = this.retireClones(this.productsK).splice(0,8);
+    this.productsAverageVit = this.retireClones(this.productsAverageVit).splice(0,8);
+  
+    
+  } else {
+    this.products = this.inputFromParent[0];
+  }
+
+  this.vitOrder = !this.vitOrder;
+  this.productsVit.emit([this.productsA, this.productsB, this.productsC, this.productsE, this.productsK, this.productsAverageVit, this.vitOrder]);
+
+
+    
 }
 
 retireClones(array: Product[]){

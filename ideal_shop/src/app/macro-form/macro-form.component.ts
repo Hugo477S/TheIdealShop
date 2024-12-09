@@ -176,15 +176,19 @@ export class MacroFormComponent implements OnInit {
     return array;  
     }
 
-  lessSugar(array: Product[]){
+  lessSugar(){
+    
     if(!this.SugarClicked) {
-      this.products.sort(this.compareSugar);
-      this.childEmitter.emit(this.products);
+    let inter = this.inputFromParent[0].sort(this.compareSugar);
+    this.childEmitter.emit(inter);
     } else {
-      this.randomizeProductsOrder(array);
+      let inter = this.inputFromParent[0];
+      this.randomizeProductsOrder(inter);
+      this.childEmitter.emit(inter);
     }
+    
     this.SugarClicked = !this.SugarClicked;
-    this.childEmitter.emit(this.products);
+    
   }
   compareSugar( a:Product, b:Product ) {
     if ( a.pm.sug < b.pm.sug ){
@@ -196,12 +200,15 @@ export class MacroFormComponent implements OnInit {
     return 0;
   }
 
-  lessFat(array: Product[]){
+  lessFat(){
     if(!this.FatClicked) {
-      this.products.sort(this.compareFat);
-      this.childEmitter.emit(this.products);
+      let inter = this.inputFromParent[0].sort(this.compareFat);
+      
+      this.childEmitter.emit(inter);
     } else {
-      this.randomizeProductsOrder(array);
+      let inter = this.inputFromParent[0];
+      this.randomizeProductsOrder(inter);
+      this.childEmitter.emit(inter);
     }
     this.FatClicked = !this.FatClicked;
   }
@@ -215,12 +222,14 @@ export class MacroFormComponent implements OnInit {
     return 0;
   }
 
-  lessSatu(array: Product[]){
+  lessSatu(){
     if(!this.SatuClicked) {
-      this.products.sort(this.compareSatu);
-      this.childEmitter.emit(this.products);
+      let inter = this.inputFromParent[0].sort(this.compareSatu);
+      this.childEmitter.emit(inter);
     } else {
-      this.randomizeProductsOrder(array);
+      let inter = this.inputFromParent[0];
+      this.randomizeProductsOrder(inter);
+      this.childEmitter.emit(inter);
     }
     this.SatuClicked = !this.SatuClicked;
     
@@ -235,12 +244,14 @@ export class MacroFormComponent implements OnInit {
     return 0;
   }
 
-  lessSodium(array: Product[]){
+  lessSodium(){
     if(!this.SodiumClicked) {
-      this.products.sort(this.compareSod);
-      this.childEmitter.emit(this.products);
+      let inter = this.inputFromParent[0].sort(this.compareSod);
+      this.childEmitter.emit(inter);
     } else {
-      this.randomizeProductsOrder(array);
+      let inter = this.inputFromParent[0];
+      this.randomizeProductsOrder(inter);
+      this.childEmitter.emit(inter);
     }
     this.SodiumClicked = !this.SodiumClicked;
   }

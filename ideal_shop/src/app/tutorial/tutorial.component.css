@@ -2,6 +2,25 @@
     display: block !important; 
 }
 
+aside {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding-bottom: 0.6em;
+}
+
+h1 {
+    text-align: center;
+}
+
+
 .btn-default {
     background-color: white;
     border: 1px solid blue;
@@ -11,18 +30,39 @@
 
 .btn-change {
     border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
+    padding: 0.4em 1.2em 0.1em;
     background-color: blue;
     color: white;
 }
 
 .buttons {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 0.8em 0.6em 0.8em;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.6em;
 }
 
+.buttons button {
+    width: 47%;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+}
+
+
+.stepsList {
+    padding-top: 1.6em;
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 25px;
+}
 
 .tutorialSurlignement {
     animation: tutoBlue 2s linear 0s 1;

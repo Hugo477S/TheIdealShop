@@ -13,13 +13,17 @@ export class TutorialComponent implements OnInit {
   incOrDec!: Boolean;
 
   incrementTStep() {
-    this.tutorialStep++;
+    if(this.tutorialStep < 4){
+      this.tutorialStep++;
+    }
     this.incOrDec = true;
     this.launchTutorialStep();
     
   }
   decrementTStep() {
-    this.tutorialStep--;
+    if(this.tutorialStep > 0){
+      this.tutorialStep--;
+    }
     this.incOrDec = false;
     this.launchTutorialStep();
   }
@@ -46,28 +50,10 @@ export class TutorialComponent implements OnInit {
       if(this.tutorialSteps[i].className.includes("tutorialBorder")){
         this.tutorialSteps[i].className = `tuto tutorialStep${stepNumber}Border`
       }
-
-
-        
-
-
-/*
-      if(this.tutorialSteps[i].className.includes("tutorialSurlignementRed")) {
-        if(this.tutorialSteps[i].className.includes("filter btn-default")) {
-          this.tutorialSteps[i].className = `filter btn-default tuto tutorialStep${stepNumber}Border`
-
-          this.tutorialSteps[i].className = `filter btn-default tuto tutorialStep${stepNumber}Border`;
-        }
-
-        this.tutorialSteps[i].className = `filter btn-default tuto tutorialStep${stepNumber}Border`;
-
-      }
-      */
     }
   }
 
   launchTutorialStep(){
-    console.log(this.tutorialStep)
 
     if(this.tutorialStep == 0) {
       if(!this.incOrDec) {
@@ -129,11 +115,9 @@ export class TutorialComponent implements OnInit {
       }
     }
     if(this.tutorialStep == 4) {
-      if(!this.incOrDec) {
-        this.regenerateTutorial("Five");
-      } else {
+
         this.regenerateTutorial("Three");
-      }
+      
       for(let i=0; i<this.tutorialSteps.length-1; i++) {
         if(this.tutorialSteps[i].className.includes("tutorialStepFourBorder")) { 
           this.tutorialSteps[i].className = "tutorialBorder"
@@ -142,19 +126,7 @@ export class TutorialComponent implements OnInit {
         }
       }
     }
-    if(this.tutorialStep == 5) {
-      this.regenerateTutorial("Four");
-      for(let i=0; i<this.tutorialSteps.length-1; i++) {
-        console.log("coucou");
-        if(this.tutorialSteps[i].className.includes("tutorialStepFiveSize")) { 
-          this.tutorialSteps[i].className = "tutorialSize";
-          
-        } else if (this.tutorialSteps[i].className.includes("tutorialStepFive")) {
-          this.tutorialSteps[i].className = "tutorialSurlignement";
-          console.log("hahi!");
-        }
-      }
-    }
+
   }
 
 
@@ -164,7 +136,7 @@ export class TutorialComponent implements OnInit {
 
   ngAfterViewInit():any {
     
-    this.tutorialSteps = Array.from(document.getElementsByClassName("tuto"));
+    this.tutorialSteps = Array.from(document.getElementsByClassName("tuto")); // !!! Peut être que plusieurs petits arrays pourraient aider plutôt qu'un gros
 
   }
 

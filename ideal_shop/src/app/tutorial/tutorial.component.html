@@ -2,16 +2,15 @@
 <div class="toHide" style="display: none;">
     <h1>Bienvenue dans le tutoriel !</h1>
 
-    <p>Vitamines, calories, bon gras, mauvais gras ... Tellement d'informations à prendre en compte pour choisir ses produits ! 
-        <br>
-        Grâce à IdealShop, utilisez un système de tri intelligent pour composer simplement votre panier : 
-    </p>
-    <div class="buttons">
-        <button (click)="decrementTStep();">Prec</button>
-        <button (click)="incrementTStep();">Suiv</button>
-    </div>
+    <aside>
+        <p>Vitamines, calories, bon gras, mauvais gras ... Tellement d'informations à prendre en compte pour bien choisir ses produits ! 
+            <br>
+            Grâce à IdealShop, utilisez un système de tri intelligent pour composer simplement votre panier : 
+        </p>
+    </aside>
+
     
-    <ul>
+    <ul class="stepsList">
         <li>Pour chaque type d'aliment, <span class="tuto tutorialStepOne">les éléments nutritifs</span> les plus importantes des produits et <span class="tuto tutorialStepTwo">leurs étendues</span> vous sont présentées.</li>
         <li>Vous pouvez alors <span class="tuto tutorialStepThree">choisir une ou plusieurs valeurs</span>
             ,puis <span class="tuto tutorialStepThreeRed">cliquez sur le boutton correspondant.</span></li>
@@ -21,8 +20,13 @@
                 <li>Et à chaque recherche effectuée, <span class="tuto tutorialStepFour">les autres intervalles</span>  changent selon les aliments sélectionnés pour affiner votre recherche</li>
             </ul>
         </li>
-        <li>Enfin, une liste de bouttons permet de <span class="tuto tutorialStepFive">trier par exemple du plus sucré moins sucré</span>, ou de <span class="tuto tutorialStepFive">retirer des produits ne correspondant pas à vos attentes (Bien-être animal, allergies ...)</span>.</li>
-    
+        <li>Enfin, une liste de bouttons permet de trier par exemple du plus sucré moins sucré, ou de retirer des produits ne correspondant pas à vos attentes (Bien-être animal, allergies ...).</li>
+        <li>    
+            <div class="buttons">
+                <button [disabled]="tutorialStep == 0" (click)="decrementTStep();">Prec</button>
+                <button [disabled]="tutorialStep == 4" (click)="incrementTStep();">Suiv</button>
+            </div>
+        </li>
     </ul>
      
     
@@ -63,7 +67,7 @@
                     </span>
                 </div> 
             </div>
-            <button class="filter btn-default tuto tutorialStepThreeRed" >Filter by <br> Carbs</button> 
+            <button class="filter btn-default" >Filter by <br> Carbs</button> 
         </div>
     
         <div class="interval">
@@ -82,7 +86,7 @@
                     </span>
                 </div>
             </div>
-            <button class="filter btn-default tuto tutorialStepThreeRed">Filter by <br> Proteins</button>  
+            <button class="filter btn-default">Filter by <br> Proteins</button>  
         </div>
     
         <div class="interval">
@@ -101,13 +105,13 @@
                     </span>
                 </div>
             </div>
-            <button class="filter btn-default tuto tutorialStepThreeRed">Filter by <br> Fibers</button>  
+            <button class="filter btn-default">Filter by <br> Fibers</button>  
         </div>
     </div>
     
     
     <div class="croissant" id="croissant">
-        <p class="croiDecroi"> <span class="tuto tutorialStepFive">Le moins possible de ces nutriments ?</span></p>
+        <p class="croiDecroi"> Le moins possible de ces nutriments ?</p>
         <div class=" croissantFlex">
             <button class="btn-default">Sucre</button>
             <button class="btn-default">Gras</button>
