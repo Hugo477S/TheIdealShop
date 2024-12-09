@@ -1,3 +1,7 @@
+.toHide {
+    display: block !important; 
+}
+
 .btn-default {
     background-color: white;
     border: 1px solid blue;
@@ -30,6 +34,10 @@
 
 .tutorialBorder {
     animation: tutoBorder 2s linear 0s 1;
+}
+
+.tutorialSize {
+    animation: tutoSize 2s linear 0s 1;
 }
 
 .filter {
@@ -149,25 +157,82 @@ input[type=number] {
 }
 
 
-@keyframes tutoBlue {
-    from {
+  @keyframes tutoBlue {
+    0% {
+        background-color: aqua;
+        border: 0px solid blue;
+      }
+      25% {
+        background-color: white;
+        border: 6px solid blue;
+      }
+      50% {
+        background-color: aqua;
+          border: 0px solid blue;
+        }
+      75% {
+        background-color: white;
+      border: 6px solid blue;
+      }
+      100% {
+        background-color: aqua;
+        border: 0px solid blue;
+      }
+  }
+
+  @keyframes tutoSize {
+    0% {
+        width: 45%;
+        background-color: aqua;
+        border: blue 1px solid;
+      }
+      25% {
+        width: 60%;
+        background-color: white;
+        border: 6px solid blue;
+      }
+      50% {
+        width: 45%;
+        background-color: aqua;
+        border: blue 1px solid;
+        }
+      75% {
+        width: 60%;
+        background-color: white;
+        border: 6px solid blue;
+      }
+      100% {
+        width: 45%;
+        background-color: aqua;
+        border: blue 1px solid;
+      }
+  }
+
+
+  @keyframes tutoRed {
+    0% {
+        background-color: rgb(7, 255, 69);
+        border: 0px solid rgb(4, 88, 11);
+      }
+      25% {
+        background-color: white;
+        border: 6px solid rgb(4, 88, 11);
+      }
+      50% {
+        background-color: rgb(7, 255, 69);
+        border: 0px solid rgb(4, 88, 11);
+        }
+      75% {
       background-color: white;
+      border: 6px solid rgb(4, 88, 11);
     }
-    to {
-      background-color: aqua;
-      opacity: 40%;
+      100% {
+        background-color: rgb(7, 255, 69);
+      border: 0px solid rgb(4, 88, 11);
     }
   }
 
-  @keyframes tutoRed {
-    from {
-      background-color: white;
-    }
-    to {
-      background-color: red;
-      opacity: 40%;
-    }
-  }
+
 
   @keyframes tutoBorder {
     0% {
