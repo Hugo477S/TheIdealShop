@@ -27,8 +27,7 @@ export class ArticleComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.cart = [];
-    
+    this.cart = JSON.parse(localStorage.getItem("cart") || '[]');
   }
 
 
@@ -39,20 +38,26 @@ export class ArticleComponent implements OnInit{
   }
 
   buy(id: number){
+    this.cart = JSON.parse(localStorage.getItem("cart") || '[]');
     this.productService.getProduct(id).subscribe(data => {
 
-      this.achat.product = data;
-      this.achat.quantity =  1;
-
-/*
-      for(let ligne of this.cart) {
+      let achat = {product: data,quantity: 1};
+      const cartou = this.cart;
+      
+      
+      for(let ligne of cartou) {
         if(ligne.product.id === achat.product.id) {
           ligne.quantity++;
-          localStorage.setItem("cart", JSON.stringify([...this.cart]));
+          localStorage.setItem("cart", JSON.stringify(cartou));
           return;
         }
       }
-*/
+      cartou.push(achat);
+      localStorage.setItem("cart", JSON.stringify(cartou));
+
+/*
+
+
 
       const cartou = [
         ...this.cart,
@@ -61,9 +66,7 @@ export class ArticleComponent implements OnInit{
       this.cart = cartou;
 
       this.achat = {} as any;
-
-      console.log(cartou);
-      localStorage.setItem("cart", JSON.stringify([...this.cart]));
+*/
 
       
     })

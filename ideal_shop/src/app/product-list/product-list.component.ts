@@ -97,8 +97,7 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit(): void {
       this.vitOrder = false;
-      this.cat = Array.from(document.getElementsByClassName("cat"));
-      this.cart = [];
+      this.cat = Array.from(document.getElementsByClassName("cat"));   
   }
 
 
