@@ -9,7 +9,7 @@ import { EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrl: './article.component.css'
+  styleUrls: ['./article.component.css', '../shared.css']
 })
 export class ArticleComponent implements OnInit{
 
@@ -54,20 +54,6 @@ export class ArticleComponent implements OnInit{
       }
       cartou.push(achat);
       localStorage.setItem("cart", JSON.stringify(cartou));
-
-/*
-
-
-
-      const cartou = [
-        ...this.cart,
-         this.achat];
-
-      this.cart = cartou;
-
-      this.achat = {} as any;
-*/
-
       
     })
   }

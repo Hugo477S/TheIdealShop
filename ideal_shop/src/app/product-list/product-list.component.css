@@ -7,16 +7,20 @@ p {
     margin-bottom: 5px;
 }
 
-.tutoriel {
-    width: 65%;
+.products, .productsByVit {
+    display: flex;
+}
+
+.tutoriel, .macroForm, .vitForm, .laitForm, .vitForm button, .products {
     margin-left: auto;
     margin-right: auto;
 }
 
+.tutoriel {
+    width: 65%;
+}
 
 .macroForm, .vitForm {
-    margin-left: auto;
-    margin-right: auto;
     width: 45%;
 }
 
@@ -30,33 +34,19 @@ p {
 }
 
 .laitForm {
-    margin-left: auto;
-    margin-right: auto;
     width: 40%;
 }
 
-
-.vitForm p  {
-    margin-bottom: 1.2em;
-}
-
-.vitForm button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.vitForm p, .vitForm button  {
     margin-bottom: 1.2em;
 }
 
 .products {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
     width: 68%;
     flex-wrap: wrap;
 }
 
 .productsByVit {
-    display: flex;
     flex-direction: column;
 }
 
@@ -72,9 +62,8 @@ p {
 
 .product {
     width: 18%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-bottom: 1.5%;
+    margin: auto 1% 1.5%;
+
 }
 
 

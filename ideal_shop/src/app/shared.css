@@ -1,0 +1,25 @@
+h1, h2, h3 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn-default {
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.4em;
+}
+
+.btn-change {
+    border-radius: 15px;
+    padding: 0.4em 1.2em 0.1em;
+    background-color: blue;
+    color: white;
+}

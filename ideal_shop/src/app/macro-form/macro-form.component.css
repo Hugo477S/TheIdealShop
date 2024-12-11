@@ -1,43 +1,38 @@
-.btn-default {
-    background-color: white;
+.interval, .croissant {
     border: 1px solid blue;
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
 }
 
-.btn-change {
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
-    background-color: blue;
-    color: white;
+.interval, input, .croiDecroi {
+    text-align: center;
 }
 
-.filter {
-    margin-top: 0.8em;
+.intervalFlex, .inpInterval, .croissantFlex {
+    display: flex;
+}
+
+label, .filter {
     font-size: 14px;
     font-weight: bolder;
 }
 
-h3 {
-    text-align: center;
-    font-size: 22px;
+.inpInterval div, .interval {
+    width: 50%;
+}
+
+.filter {
+    margin-top: 0.8em;
 }
 
 h4 {
-    margin-bottom: 0.6em;
-    margin-top: 1em;
+    margin: 1em auto 0.6em;
     font-size: 18px;
 }
 
 .intervalFlex {
-    display: flex;
     flex-wrap: wrap;
 }
 
 .interval {
-    width: 50%;
-    text-align: center;
-    border: 1px solid blue;
     padding-bottom: 1em;
 }
 
@@ -61,30 +56,16 @@ h4 {
     border-top: 0px;
 }
 
-.inpInterval {
-    display: flex;
-}
-
-.inpInterval div {
-    width: 50%;
-}
-
-/*!!! Faire en sorte de ne pas avoir la virgule  */
 label {
     margin: 0;
     margin-left: 5px;
-    font-size: 14px;
-    font-weight: bolder;
 }
 
 input {
     height: 18px;
     margin-left: 10px;
     width: 40px;
-    text-align: center;
 }
-
-
 
 /*Enlever les flèches*/
 /* Chrome, Safari, Edge, Opera */
@@ -100,7 +81,6 @@ input[type=number] {
 }
 
 .croissant {
-    border: blue 1px solid;
     border-radius: 25px;
     width: 45%;
     margin-left: auto;
@@ -111,20 +91,16 @@ input[type=number] {
 }
 
 .croissantFlex {
-    display: flex;
     justify-content: space-evenly;
 }
 
 .croiDecroi {
-    text-align: center;
-    margin-top: 0.8em;
-    margin-bottom: 1.6em;
+    margin: 0.8em auto 1.6em;
 }
 
 .croissant button {
     font-size: 12px;
     font-weight: 900;
     padding: 0.8em 1.4em 0.8em;
-
 }
 

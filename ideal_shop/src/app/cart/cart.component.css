@@ -1,9 +1,7 @@
 .container {
-    width: 100%;
     border: 1px solid blue;
     border-radius: 25px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0 1em;
 }
 
 .cart {
@@ -18,7 +16,6 @@ table, th, td {
 
 th {
     min-width: 80px;
-    text-align: center;
 }
 
 td {
@@ -26,24 +23,16 @@ td {
     padding: 0.6em;
 }
 
-.center {
+.center, p, th {
     text-align: center;
 }
 
 p {
-    text-align: center;
     margin-top: 1.2em;
 }
 
 button {
     width: 10%;
     margin-left: 45%;
-}
-
-.btn-default {
-    background-color: white;
-    border: 1px solid blue;
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
 }
 

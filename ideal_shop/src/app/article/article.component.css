@@ -24,19 +24,19 @@
     font-size: 20px;
 }
 
-.mpk {
+.priceMass {
     display: flex;
     justify-content: center;
 }
 
-.mass {
+.mass, .pricePerKilo {
     margin-left: 4%;
     margin-right: 4%;
 }
 
-.pricePerKilo {
-    margin-left: 4%;
-    margin-right: 4%;
+.action, .action button {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .action {
@@ -44,8 +44,6 @@
     margin-bottom: 10px;
     display: flex;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .action span {
@@ -55,8 +53,6 @@
 
 .action button {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .img {

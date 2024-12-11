@@ -1,21 +1,39 @@
 h1 {
-    text-align: center;
     font-size: 26px;
     margin-bottom: 1.2em;
 }
 
-h2 {
-    text-align: center;
+.infosCont p, .product p {
+    margin: 0;
+}
+
+.prodImg, .prodContainer, .infosCont {
+    width: 80%;
+}
+
+.prodContainer, h2, .product p {
+    padding: 0;
+}
+
+.prodContainer, .product, .infosCont, .description, .columnsContainer, .macro, .vitamines, .mineraux {
+    display: flex;
+}
+
+.description, .infosCont {
+    justify-content: space-evenly;
+}
+
+.prodContainer, .infosCont, .description {
+    align-items: center;
+}
+
+.description, .prodContainer, .macro, .vitamines, .mineraux {
+    flex-direction: column;
 }
 
 .prodContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
-    width: 80%;
 }
 
 .product {
@@ -23,24 +41,17 @@ h2 {
     border-radius: 25px;
     padding: 10px;
     width: 30%;
-    display: flex;
     justify-content: center;
     margin-bottom: 2em;
 }
 
 h2 {
-   
     line-height: 1.1;
-    padding: 0;
     font-size: 22px;
     font-weight: 700;
 }
 
-.infosCont{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
+.infosCont {
     padding: 1em;
 }
 
@@ -49,22 +60,10 @@ h2 {
 }
 
 .infosCont p {
-    margin:0;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    
-}
-
-.description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    padding: 4px 0;
 }
 
 .product p{
-    margin: 0;
-    padding: 0;
     font-weight: 700;
     font-size: 17px;
     margin-left: 8%;
@@ -83,26 +82,15 @@ h2 {
     font-size: 16px;
 }
 
-.prodImg {
-    width: 80%;
-}
-
 .macro, .vitamines, .mineraux {
-    display: flex;
-    flex-direction: column;
     text-align: center;
 }
 
 .title {
     border-bottom: 3px solid greenyellow;
-    
 }
 
 .extra {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 12px;
 }
 
-.columnsContainer {
-    display: flex;
-}

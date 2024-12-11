@@ -5,7 +5,7 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'app-laitage-form',
   templateUrl: './laitage-form.component.html',
-  styleUrl: './laitage-form.component.css'
+  styleUrls: ['./laitage-form.component.css', '../shared.css']
 })
 export class LaitageFormComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'app-navig-product',
   templateUrl: './navig-product.component.html',
-  styleUrl: './navig-product.component.css'
+  styleUrls: ['./navig-product.component.css', '../shared.css']
 })
 export class NavigProductComponent implements OnInit {
 

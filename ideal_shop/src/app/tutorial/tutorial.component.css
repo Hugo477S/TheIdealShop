@@ -3,65 +3,51 @@
 }
 
 aside {
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin: 1em auto 2em;
 }
 
-ul {
-    list-style: none;
+input, aside, .interval, .croiDecroi {
+  text-align: center;
+}
+
+.buttons, .intervalFlex, .inpInterval, .croissantFlex{
+  display: flex;
+}
+
+.buttons, .croissant {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons, .stepsList, .interval {
+  border: 1px solid blue;
+}
+
+.stepsList, .croissant {
+  border-radius: 25px;
+}
+
+.filter, label {
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 li {
     padding-bottom: 0.6em;
 }
 
-h1 {
-    text-align: center;
-}
-
-
-.btn-default {
-    background-color: white;
-    border: 1px solid blue;
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
-}
-
-.btn-change {
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.1em;
-    background-color: blue;
-    color: white;
-}
-
 .buttons {
-    display: flex;
     justify-content: space-between;
     background-color: white;
-    border: 1px solid blue;
     border-radius: 15px;
     padding: 0.8em 0.6em 0.8em;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 1.6em;
 }
-
-.buttons button {
-    width: 47%;
-    background-color: white;
-    border: 1px solid blue;
-    border-radius: 15px;
-    padding: 0.4em 1.2em 0.4em;
-}
-
 
 .stepsList {
     padding-top: 1.6em;
     width: 100%;
-    border: 1px solid blue;
-    border-radius: 25px;
 }
 
 .tutorialSurlignement {
@@ -82,13 +68,6 @@ h1 {
 
 .filter {
     margin-top: 0.8em;
-    font-size: 14px;
-    font-weight: bolder;
-}
-
-h3 {
-    text-align: center;
-    font-size: 22px;
 }
 
 h4 {
@@ -98,14 +77,11 @@ h4 {
 }
 
 .intervalFlex {
-    display: flex;
     flex-wrap: wrap;
 }
 
 .interval {
     width: 50%;
-    text-align: center;
-    border: 1px solid blue;
     padding-bottom: 1em;
 }
 
@@ -129,9 +105,7 @@ h4 {
     border-top: 0px;
 }
 
-.inpInterval {
-    display: flex;
-}
+
 
 .inpInterval div {
     width: 50%;
@@ -141,15 +115,12 @@ h4 {
 label {
     margin: 0;
     margin-left: 5px;
-    font-size: 14px;
-    font-weight: bolder;
 }
 
 input {
     height: 18px;
     margin-left: 10px;
     width: 40px;
-    text-align: center;
 }
 
 
@@ -169,33 +140,25 @@ input[type=number] {
 
 .croissant {
     border: blue 1px solid;
-    border-radius: 25px;
     width: 45%;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 0.6em;
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
 
 .croissantFlex {
-    display: flex;
     justify-content: space-evenly;
 }
 
 .croiDecroi {
-    text-align: center;
-    margin-top: 0.8em;
-    margin-bottom: 1.6em;
+    margin: 0.8em auto 1.6em;
 }
 
 .croissant button {
     font-size: 12px;
     font-weight: 900;
     padding: 0.8em 1.4em 0.8em;
-
 }
-
 
   @keyframes tutoBlue {
     0% {

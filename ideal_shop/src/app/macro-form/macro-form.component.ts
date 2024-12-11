@@ -6,7 +6,7 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'app-macro-form',
   templateUrl: './macro-form.component.html',
-  styleUrl: './macro-form.component.css'
+  styleUrls: ['./macro-form.component.css', '../shared.css']
 })
 export class MacroFormComponent implements OnInit {
   constructor(private productService: ProductService){}

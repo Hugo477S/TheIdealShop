@@ -23,8 +23,8 @@
         <li>Enfin, une liste de bouttons permet de trier par exemple du plus sucré moins sucré, ou de retirer des produits ne correspondant pas à vos attentes (Bien-être animal, allergies ...).</li>
         <li>    
             <div class="buttons">
-                <button [disabled]="tutorialStep == 0" (click)="decrementTStep();">Prec</button>
-                <button [disabled]="tutorialStep == 4" (click)="incrementTStep();">Suiv</button>
+                <button class="btn-default" [disabled]="tutorialStep == 0" (click)="decrementTStep();">Prec</button>
+                <button class="btn-default" [disabled]="tutorialStep == 4" (click)="incrementTStep();">Suiv</button>
             </div>
         </li>
     </ul>

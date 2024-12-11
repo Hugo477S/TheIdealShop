@@ -5,7 +5,7 @@ import autoTable from 'jspdf-autotable';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrls: ['./cart.component.css', '../shared.css']
 })
 export class CartComponent implements OnInit {
 
