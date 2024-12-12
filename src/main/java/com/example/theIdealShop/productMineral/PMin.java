@@ -11,7 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,8 +44,10 @@ public class PMin {
     @Column(name= "zin")
     private Float zin;
 
-    @OneToOne(mappedBy = "pMin", cascade = CascadeType.ALL) 
-    @JoinColumn(name = "productId", referencedColumnName = "product_name")
+    
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "productId", referencedColumnName = "id")
     private Product product;
 
     public PMin(Long id, Float cal, Float cui,

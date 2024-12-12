@@ -13,6 +13,7 @@ export class VitFormComponent implements OnInit {
   ) {}
 
   @Output() productsVit: EventEmitter<any[]> = new EventEmitter<any[]>();
+  @Output() vitOrderFromVit: EventEmitter<Boolean> = new EventEmitter<Boolean>(); // Array of products puis catPlat
 
   @Input() inputFromParent:any[];
 
@@ -21,7 +22,7 @@ export class VitFormComponent implements OnInit {
 
 
 ngOnInit(): void {
-
+  this.vitOrder = false;
 }
 
 ngOnChanges() {
@@ -43,8 +44,9 @@ productsAverageVit!: Product[];
 
 orderByVit() {
   
-  
-  if(!this.vitOrder) {
+  this.vitOrder = !this.vitOrder;
+  this.vitOrderFromVit.emit(this.vitOrder);
+  if(this.vitOrder) {
     this.productsA = this.products.toSorted(this.compareA);
     this.productsB = this.products.toSorted(this.compareB);
     this.productsC = this.products.toSorted(this.compareC);
@@ -65,9 +67,8 @@ orderByVit() {
     this.products = this.inputFromParent[0];
   }
 
-  this.vitOrder = !this.vitOrder;
+  
   this.productsVit.emit([this.productsA, this.productsB, this.productsC, this.productsE, this.productsK, this.productsAverageVit, this.vitOrder]);
-
 
     
 }

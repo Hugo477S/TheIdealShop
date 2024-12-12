@@ -1,20 +1,17 @@
 <div class="toHide" style="display: none;">
-    <app-navig-product (dataFromNav)="catPlatHandler($event)"></app-navig-product>
+    
+    <app-navig-product (vitOrderToParent)="vitOrderFromNav($event)" (dataFromNav)="catPlatHandler($event)"></app-navig-product>
 
 <div class="tutoriel" *ngIf="catPlat == ''">
     <app-tutorial></app-tutorial>
 </div>
 
-
 <div class="laitForm" *ngIf="catPlat == 'laitage'">
     <app-laitage-form (laitProds)="receiveProductsFromLaitage($event)"  [inputFromParent]="[products, catPlat]"></app-laitage-form>
 </div>
 
-
-
-
 <div class="vitForm" *ngIf="catPlat == 'legume' || catPlat == 'fruit'">
-    <app-vit-form (productsVit)="receiveProductsFromVit($event)"  [inputFromParent]="[products, catPlat]"></app-vit-form>
+    <app-vit-form (vitOrderFromVit)="vitOrderFromVita($event)" (productsVit)="receiveProductsFromVit($event)"  [inputFromParent]="[products, catPlat]"></app-vit-form>
 </div>
 
 <form class="macroForm" *ngIf="catPlat == 'plat' || catPlat == 'junk'">
@@ -25,40 +22,71 @@
     <app-article class="product" *ngFor = "let product of products" [product] = product>
     </app-article>
 </div>
+
 <div *ngIf="vitOrder == true && catPlat == 'legume'" class="productsByVit">
     <p class="voTitle">Les plus vitaminés</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsAverageVit" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsAverageVit" [product] = product>
         </app-article>
     </div>
     <p class="voTitle">Vitamine A</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsA" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsA" [product] = product>
         </app-article>
     </div>
     <p class="voTitle">Vitamine B</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsB" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsB" [product] = product>
         </app-article>
     </div>
     <p class="voTitle">Vitamine C</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsC" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsC" [product] = product>
         </app-article>
     </div>
     <p class="voTitle">Vitamine E</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsE" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsE" [product] = product>
         </app-article>
     </div>
     <p class="voTitle">Vitamine K</p>
     <div class="products">
-        <app-article *ngFor = "let product of productsK" [product] = product>
+        <app-article class="product" *ngFor = "let product of productsK" [product] = product>
         </app-article>
     </div>
 </div>
 
-
-
+<div *ngIf="vitOrder == true && catPlat == 'fruit'" class="productsByVit">
+    <p class="voTitle">Les plus vitaminés</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsAverageVit" [product] = product>
+        </app-article>
+    </div>
+    <p class="voTitle">Vitamine A</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsA" [product] = product>
+        </app-article>
+    </div>
+    <p class="voTitle">Vitamine B</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsB" [product] = product>
+        </app-article>
+    </div>
+    <p class="voTitle">Vitamine C</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsC" [product] = product>
+        </app-article>
+    </div>
+    <p class="voTitle">Vitamine E</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsE" [product] = product>
+        </app-article>
+    </div>
+    <p class="voTitle">Vitamine K</p>
+    <div class="products">
+        <app-article class="product" *ngFor = "let product of productsK" [product] = product>
+        </app-article>
+    </div>
+</div>
 
 </div>

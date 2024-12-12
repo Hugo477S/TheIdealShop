@@ -16,6 +16,9 @@
 .name {
     margin-top: 8px;
     font-size: 15px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .price {

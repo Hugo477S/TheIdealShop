@@ -16,7 +16,6 @@ export class LaitageFormComponent implements OnInit {
 
   ngAfterViewInit() {
     this.butCroissant = Array.from(document.getElementsByClassName("btn-default"));
-    console.log(this.yaourt);
   }
 
   butCroissant!: Element[];
@@ -82,7 +81,6 @@ export class LaitageFormComponent implements OnInit {
       if(this.count == 2) {
         this.productsAllLaitages = this.products;
       }
-      console.log(this.productsAllLaitages);
     }
 
     yaourtClick(){
@@ -97,9 +95,6 @@ export class LaitageFormComponent implements OnInit {
       this.onlyCheese(this.productsAllLaitages);
     }
 
-
-
-
     onlyYogurt(array: Product[]) {
       array = this.productsAllLaitages.filter(product => {
         return ((product.name.toLowerCase()).includes("yaourt") || (product.name.toLowerCase()).includes("boisson lactée")
@@ -107,6 +102,7 @@ export class LaitageFormComponent implements OnInit {
       );
       })
       this.laitProds.emit(array);
+      return array;
     }
 
 
@@ -117,6 +113,7 @@ export class LaitageFormComponent implements OnInit {
       );
       })
       this.laitProds.emit(array);
+      return array;
     }
 
 
@@ -144,7 +141,6 @@ export class LaitageFormComponent implements OnInit {
         return (product.pmin.cal >= 50 && product.pmin.pho >= 50); 
        })
     }
-
      return array;
   }     
 
@@ -166,36 +162,43 @@ moreVitamins(array: Product[]){
   generalSearch() {
 
     let inter;
+    let interTwo:Product[];
+
+    if(this.yaourt) {
+       interTwo = this.onlyYogurt(this.productsAllLaitages);
+    } else {
+       interTwo = this.onlyCheese(this.productsAllLaitages);
+    }
 
     if (this.oligo) {
       if (this.degresses) {
         if (this.vitamin) {
-        inter = this.moreVitamins(this.noFat(this.moreCalcium(this.productsAllLaitages)))
+        inter = this.moreVitamins(this.noFat(this.moreCalcium(interTwo)))
         this.laitProds.emit(inter);
         return;
         }
-        inter = this.noFat(this.moreCalcium(this.productsAllLaitages))
+        inter = this.noFat(this.moreCalcium(interTwo))
         this.laitProds.emit(inter);
         return;
       }
-      inter = this.moreCalcium(this.productsAllLaitages)
+      inter = this.moreCalcium(interTwo)
       this.laitProds.emit(inter);
       return;
   } else if (this.degresses) {
       if(this.vitamin) {
-        inter = this.noFat(this.moreVitamins(this.productsAllLaitages))
+        inter = this.noFat(this.moreVitamins(interTwo))
         this.laitProds.emit(inter);
         return;
       }
-      inter =  this.noFat(this.productsAllLaitages)
+      inter =  this.noFat(interTwo)
       this.laitProds.emit(inter);
       return;
   } else if (this.vitamin) {
-    inter = this.moreVitamins(this.productsAllLaitages);
+    inter = this.moreVitamins(interTwo);
     this.laitProds.emit(inter);
     return;
   } else {
-    inter = this.productsAllLaitages;
+    inter = interTwo;
     this.laitProds.emit(inter);
 
   }
@@ -232,9 +235,25 @@ onVitClick() {
       this.getProductsByMacros();
     }
 
-      getProductsByMacros() { 
+    getProductsByMacros() { 
     this.productService.getProductsByMacros(this.inputFromParent[1], this.minCalo, this.maxCalo,
       this.minProt, this.maxProt, this.a, this.b, this.c, this.d).subscribe(data => {
+
+        // Filtrer ici selon yaourt ou fromage
+
+        if(this.yaourt) {
+          data = data.filter(product => {
+            return ((product.name.toLowerCase()).includes("yaourt") || (product.name.toLowerCase()).includes("boisson lactée")
+          || (product.name.toLowerCase()).includes("petits suisses")
+          );
+          });
+        } else {
+          data = data.filter(product => {
+            return (!(product.name.toLowerCase()).includes("yaourt") && !(product.name.toLowerCase()).includes("boisson lactée")
+            && !(product.name.toLowerCase()).includes("petits suisses")
+          );
+          })
+        }
           this.products = data;
           this.productsAllLaitages = data;
           this.getMinMax(data);
@@ -277,8 +296,6 @@ onVitClick() {
 
   changeButCroissant(event: any) {
     let index = this.butCroissant.indexOf(event.target);
-    console.log(index);
-    console.log(this.butCroissant.indexOf(event.target));
     for(let i=0; i<this.butCroissant.length; i++) {
       if(this.butCroissant.indexOf(this.butCroissant[i]) == index && this.butCroissant[i].className == "btn-default") {
         this.butCroissant[i].className = "btn-change";

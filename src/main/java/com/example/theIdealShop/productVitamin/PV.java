@@ -24,30 +24,30 @@ public class PV {
     private Long id;
 
     @Column(name= "a")
-    private Integer a;
+    private Float a;
 
     @Column(name= "b")
-    private Integer b;
+    private Float b;
 
     @Column(name= "c")
-    private Integer c;
+    private Float c;
 
     @Column(name= "d")
-    private Integer d;
+    private Float d;
     
     @Column(name= "e")
-    private Integer e;
+    private Float e;
 
     @Column(name= "k")
-    private Integer k;
+    private Float k;
 
     @ManyToOne(cascade = CascadeType.ALL) // it's a reference to productInfo in Product
     //@MapsId
     @JoinColumn(name = "productId", referencedColumnName = "id")
     private Product product;
 
-    public PV(Long id, Integer a, Integer b,
-    Integer c, Integer d, Integer e, Integer k, Product product) {
+    public PV(Long id, Float a, Float b,
+    Float c, Float d, Float e, Float k, Product product) {
         this.id = id;
         this.a = a;
         this.b = b;
@@ -58,8 +58,8 @@ public class PV {
         this.product = product;
     }
 
-    public PV(Integer a, Integer b,
-    Integer c, Integer d, Integer e, Integer k, Product product) {
+    public PV(Float a, Float b,
+    Float c, Float d, Float e, Float k, Product product) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -73,40 +73,40 @@ public class PV {
 
     }
 
-    public Integer getA() {
+    public Float getA() {
         return this.a;
     }
-    public void setA(Integer a) {
+    public void setA(Float a) {
         this.a = a;
     }
-    public Integer getB() {
+    public Float getB() {
         return this.b;
     }
-    public void setB(Integer b) {
+    public void setB(Float b) {
         this.b = b;
     }
-    public Integer getC() {
+    public Float getC() {
         return this.c;
     }
-    public void setC(Integer c) {
+    public void setC(Float c) {
         this.c = c;
     }
-    public Integer getD() {
+    public Float getD() {
         return this.d;
     }
-    public void setD(Integer d) {
+    public void setD(Float d) {
         this.d = d;
     }
-    public Integer getE() {
+    public Float getE() {
         return this.e;
     }
-    public void setE(Integer e) {
+    public void setE(Float e) {
         this.e = e;
     }
-    public Integer getK() {
+    public Float getK() {
         return this.k;
     }
-    public void setK(Integer k) {
+    public void setK(Float k) {
         this.k = k;
     }
 

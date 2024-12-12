@@ -12,10 +12,13 @@ export class NavigProductComponent implements OnInit {
   constructor(private productService: ProductService){}
 
   @Output() dataFromNav: EventEmitter<string> = new EventEmitter<string>();
+  @Output() vitOrderToParent: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+
 
   catPlat !: string;
   cat!: Element[];
   products!: Product[];
+  vitOrder: Boolean;
 
 
   ngOnInit(): void {
@@ -31,6 +34,10 @@ export class NavigProductComponent implements OnInit {
     this.catPlat = "";    
     } else {
     this.catPlat = event.target.id;
+    if (event.target.id != "legume" || event.target.id != "fruit") {
+      this.vitOrder = false;
+      this.vitOrderToParent.emit(this.vitOrder);
+    }
     }
     this.dataFromNav.emit(this.catPlat);
   }

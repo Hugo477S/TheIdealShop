@@ -19,7 +19,7 @@ input, aside, .interval, .croiDecroi {
   margin-right: auto;
 }
 
-.buttons, .stepsList, .interval {
+.buttons, .stepsList, .interval, .croissant {
   border: 1px solid blue;
 }
 
@@ -71,8 +71,7 @@ li {
 }
 
 h4 {
-    margin-bottom: 0.6em;
-    margin-top: 1em;
+    margin: 1em auto 0.6em;
     font-size: 18px;
 }
 
@@ -80,8 +79,7 @@ h4 {
     flex-wrap: wrap;
 }
 
-.interval {
-    width: 50%;
+.interval, .croissant {
     padding-bottom: 1em;
 }
 
@@ -105,9 +103,7 @@ h4 {
     border-top: 0px;
 }
 
-
-
-.inpInterval div {
+.inpInterval div, .interval {
     width: 50%;
 }
 
@@ -123,8 +119,6 @@ input {
     width: 40px;
 }
 
-
-
 /*Enlever les flèches*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -139,11 +133,8 @@ input[type=number] {
 }
 
 .croissant {
-    border: blue 1px solid;
     width: 45%;
-    margin-top: 0.6em;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin: 0.6em auto 1em;
 }
 
 .croissantFlex {
@@ -211,7 +202,6 @@ input[type=number] {
       }
   }
 
-
   @keyframes tutoRed {
     0% {
         background-color: rgb(7, 255, 69);
@@ -234,8 +224,6 @@ input[type=number] {
       border: 0px solid rgb(4, 88, 11);
     }
   }
-
-
 
   @keyframes tutoBorder {
     0% {
