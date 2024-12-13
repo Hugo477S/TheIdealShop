@@ -30,31 +30,25 @@ public class ProductController {
     }
 
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @GetMapping("/")
     public List<Product> getProducts(){ //
         return productService.getProducts();
     }
 
-    @GetMapping("/a")
-    public String cronJob(){ 
-        return "a";
-    }
-
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @GetMapping("/{id}")
     public Optional<Product> getProductById(@PathVariable("id") Integer id){
         return productService.getProductById(id);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @GetMapping("/cat")
     public List<Product> searchProductsByCat(@RequestParam(required = false) CategoriePlat categoriePlat){
         return productService.searchProductsByCat(categoriePlat);
     }
 
-
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @GetMapping("/macros")
     public List<Product> searchProductsByMacros(
         @RequestParam(required = false) CategoriePlat categoriePlat,
@@ -71,13 +65,13 @@ public class ProductController {
         maxCarb, minProt, maxProt, minFib, maxFib);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @PostMapping("/")
     public void registerNewProduct(@RequestBody Product product) {
         productService.addNewProduct(product);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://theidealshop-1.onrender.com")
     @PostMapping("/many")
     public void registerNewProducts(@RequestBody List<Product> productList) {
         productService.addNewProducts(productList);
