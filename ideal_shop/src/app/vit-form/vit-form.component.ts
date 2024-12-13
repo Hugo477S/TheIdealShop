@@ -6,7 +6,7 @@ import { ProductVitamin } from '../productVitamin';
 @Component({
   selector: 'app-vit-form',
   templateUrl: './vit-form.component.html',
-  styleUrl: './vit-form.component.css'
+  styleUrls: ['./vit-form.component.css', '../shared.css']
 })
 export class VitFormComponent implements OnInit {
   constructor(

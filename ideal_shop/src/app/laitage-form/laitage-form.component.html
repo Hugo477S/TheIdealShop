@@ -1,3 +1,4 @@
+<div>
 <ul class="cheeseOrYog">
     <li>
         <button class="btn-default" (click)="cheeseClick()">
@@ -11,7 +12,7 @@
     </li>
 </ul>
 
-<div *ngIf="yaourt === true || fromage === true"> <!--Ne peut pas récupérer les bouttons dans le tableau d'éléments à cause de ça-->
+<div class="laitForm" *ngIf="yaourt === true || fromage === true"> 
     <h3>Nutriments pour 100g</h3>
 <div class="intervalFlex">
     <div class="interval">

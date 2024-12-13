@@ -2,6 +2,11 @@
     display: flex;
 }
 
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
 input, .interval {
     text-align: center;
 }
@@ -11,15 +16,21 @@ input, .interval {
 }
 
 .cheeseOrYog {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.6em;
     padding-left: 0;
-    width: 20%;
+}
+
+.laitForm {
+    margin-top: 2.2em;
 }
 
 .cheeseOrYog li {
+    margin: 0;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
