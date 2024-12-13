@@ -30,25 +30,25 @@ public class ProductController {
     }
 
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @GetMapping("/")
     public List<Product> getProducts(){ //
         return productService.getProducts();
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @GetMapping("/{id}")
     public Optional<Product> getProductById(@PathVariable("id") Integer id){
         return productService.getProductById(id);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @GetMapping("/cat")
     public List<Product> searchProductsByCat(@RequestParam(required = false) CategoriePlat categoriePlat){
         return productService.searchProductsByCat(categoriePlat);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @GetMapping("/macros")
     public List<Product> searchProductsByMacros(
         @RequestParam(required = false) CategoriePlat categoriePlat,
@@ -65,13 +65,13 @@ public class ProductController {
         maxCarb, minProt, maxProt, minFib, maxFib);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @PostMapping("/")
     public void registerNewProduct(@RequestBody Product product) {
         productService.addNewProduct(product);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*") 
     @PostMapping("/many")
     public void registerNewProducts(@RequestBody List<Product> productList) {
         productService.addNewProducts(productList);
@@ -91,19 +91,5 @@ public class ProductController {
        return productService.updateProduct(id, pV);
     }
 
- 
-/* 
-    @CrossOrigin
-    @GetMapping(path = "/searchVit")
-    public List<Product> findByProductByVitamins(
-        @RequestParam(required = false) Double a,
-        @RequestParam(required = false) Double b,
-        @RequestParam(required = false) Double c,
-        @RequestParam(required = false) Double d,
-        @RequestParam(required = false) Double e,
-        @RequestParam(required = false) Double k
-    ){
-        return productService.findByProductByVitamins(a, b, c, d, e, k);
-    }*/
 
 }
