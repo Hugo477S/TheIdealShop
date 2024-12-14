@@ -9,7 +9,7 @@ import { Product } from './product';
 export class ProductService {
 
   //private baseURL = "http://localhost:8080/"; "https://theidealshop.onrender.com/"
- private baseURL = "https://theidealshop.onrender.com/";
+ private baseURL = "http://localhost:8080/";
 
 constructor(private httpClient: HttpClient) {}
 getProductsList(): Observable<Product[]>{

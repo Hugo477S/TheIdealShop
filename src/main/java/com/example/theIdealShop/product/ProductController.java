@@ -19,7 +19,7 @@ import com.example.theIdealShop.domain.CategoriePlat;
 import com.example.theIdealShop.productVitamin.PV;
 
 @RestController
-@RequestMapping("https://theidealshop.onrender.com") // localhost puis api...
+@RequestMapping() // localhost puis api...
 public class ProductController {
 
     private final ProductService productService;
