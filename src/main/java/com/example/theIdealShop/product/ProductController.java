@@ -43,7 +43,7 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    @CrossOrigin(origins = "/cat") 
+    @CrossOrigin(origins = "*") 
     @GetMapping("/cat")
     public List<Product> searchProductsByCat(@RequestParam(required = false) CategoriePlat categoriePlat){
         return productService.searchProductsByCat(categoriePlat);
