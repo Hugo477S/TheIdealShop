@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.theIdealShop.domain.CategoriePlat;
 import com.example.theIdealShop.productVitamin.PV;
 
-@CrossOrigin(origins="https://theidealshop.onrender.com")
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping() // localhost puis api...
 public class ProductController {
