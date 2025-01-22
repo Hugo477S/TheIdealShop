@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tutorial',
-  templateUrl: './tutorial.component.html',
-  styleUrls: ['./tutorial.component.css', '../shared.css']
+  selector: 'app-new-tutorial',
+  standalone: true,
+  imports: [],
+  templateUrl: './new-tutorial.component.html',
+  styleUrls: ['./new-tutorial.component.css', '../shared.css']
 })
-export class TutorialComponent implements OnInit {
-
+export class NewTutorialComponent implements OnInit{
 
   tutorialStep: number = 0;
   tutorialSteps: Element[];
@@ -135,11 +136,8 @@ export class TutorialComponent implements OnInit {
   }
 
   ngAfterViewInit():any {
-    
     this.tutorialSteps = Array.from(document.getElementsByClassName("tuto")); // !!! Peut être que plusieurs petits arrays pourraient aider plutôt qu'un gros
 
   }
-
-
-
 }
+

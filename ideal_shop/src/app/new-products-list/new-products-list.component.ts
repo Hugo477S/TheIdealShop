@@ -1,16 +1,31 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { NewArticleComponent } from '../new-article/new-article.component';
+import { NewLaitageFormComponent } from '../new-laitage-form/new-laitage-form.component';
+import { NewMacroFormComponent } from '../new-macro-form/new-macro-form.component';
+import { NewNavigProductComponent } from '../new-navig-product/new-navig-product.component';
+import { NewProductComponent } from '../new-product/new-product.component';
+import { NewTutorialComponent } from '../new-tutorial/new-tutorial.component';
+import { NewVitFormComponent } from '../new-vit-form/new-vit-form.component';
 import { Pm } from '../pm';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { ProductVitamin } from '../productVitamin';
 
+import { CommonModule } from '@angular/common';
+
+
+
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  selector: 'app-new-products-list',
+  standalone: true,
+  imports: [CommonModule, NewArticleComponent, NewProductComponent, NewMacroFormComponent, NewLaitageFormComponent,
+    NewNavigProductComponent, NewVitFormComponent, NewTutorialComponent
+    ],
+  templateUrl: './new-products-list.component.html',
+  styleUrls: ['./new-products-list.component.css', '../shared.css']
 })
-export class ProductListComponent implements OnInit{
+export class NewProductsListComponent implements OnInit {
 
   products!: Product[];
   intervals!: Element[];
@@ -84,7 +99,6 @@ export class ProductListComponent implements OnInit{
     } else {
       this.catPlatHandler(this.catPlat);
     }
-    
   }
 
   receiveProductsFromLaitage($event:any[]) {
@@ -98,4 +112,7 @@ export class ProductListComponent implements OnInit{
   ngOnInit(): void {
       this.cat = Array.from(document.getElementsByClassName("cat"));   
   }
+
 }
+
+

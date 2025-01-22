@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LaitageFormComponent } from './laitage-form.component';
+import { NewMacroFormComponent } from './new-macro-form.component';
 
-describe('LaitageFormComponent', () => {
-  let component: LaitageFormComponent;
-  let fixture: ComponentFixture<LaitageFormComponent>;
+describe('NewMacroFormComponent', () => {
+  let component: NewMacroFormComponent;
+  let fixture: ComponentFixture<NewMacroFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LaitageFormComponent]
+      imports: [NewMacroFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LaitageFormComponent);
+    fixture = TestBed.createComponent(NewMacroFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

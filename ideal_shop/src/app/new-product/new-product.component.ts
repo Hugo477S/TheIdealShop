@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
+import { CommonModule } from '@angular/common';
+
 
 @Component({
-  
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  selector: 'app-new-product',
+  standalone: true,
+  imports: [NgOptimizedImage, CommonModule],
+  templateUrl: './new-product.component.html',
+  styleUrls: ['./new-product.component.css', '../shared.css']
 })
-export class ProductComponent {
+export class NewProductComponent implements OnInit {
 
   id!: number;
   product!: Product;
@@ -26,7 +30,5 @@ export class ProductComponent {
       this.product = data;
       
   })
-
 }
-
 }

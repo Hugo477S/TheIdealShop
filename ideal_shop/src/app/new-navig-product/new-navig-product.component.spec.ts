@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MacroFormComponent } from './macro-form.component';
+import { NewNavigProductComponent } from './new-navig-product.component';
 
-describe('MacroFormComponent', () => {
-  let component: MacroFormComponent;
-  let fixture: ComponentFixture<MacroFormComponent>;
+describe('NewNavigProductComponent', () => {
+  let component: NewNavigProductComponent;
+  let fixture: ComponentFixture<NewNavigProductComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MacroFormComponent]
+      imports: [NewNavigProductComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MacroFormComponent);
+    fixture = TestBed.createComponent(NewNavigProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

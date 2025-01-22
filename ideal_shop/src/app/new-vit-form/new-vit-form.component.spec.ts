@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VitFormComponent } from './vit-form.component';
+import { NewVitFormComponent } from './new-vit-form.component';
 
-describe('VitFormComponent', () => {
-  let component: VitFormComponent;
-  let fixture: ComponentFixture<VitFormComponent>;
+describe('NewVitFormComponent', () => {
+  let component: NewVitFormComponent;
+  let fixture: ComponentFixture<NewVitFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VitFormComponent]
+      imports: [NewVitFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(VitFormComponent);
+    fixture = TestBed.createComponent(NewVitFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

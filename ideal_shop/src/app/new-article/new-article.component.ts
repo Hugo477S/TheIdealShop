@@ -4,14 +4,22 @@ import { Achat } from '../achat';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { EventEmitter, Output } from '@angular/core';
 
+
 @Component({
-  selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css', '../shared.css']
+  selector: 'app-new-article',
+  standalone: true,
+  imports: [NgOptimizedImage, CommonModule],
+  templateUrl: './new-article.component.html',
+  styleUrls: ['./new-article.component.css', '../shared.css']
 })
-export class ArticleComponent implements OnInit{
+
+export class NewArticleComponent implements OnInit{
+
+  cart!: any;
+  achat: Achat = new Achat();
 
   @Output() newItemEvent = new EventEmitter<string>();
 
@@ -22,19 +30,12 @@ export class ArticleComponent implements OnInit{
     private router: Router
   ) {}
 
-  cart!: any;
-  achat: Achat = new Achat();
-
-
   ngOnInit(): void {
     this.cart = JSON.parse(localStorage.getItem("cart") || '[]');
   }
 
-
-
   details(id: number){
     this.router.navigate(['product/', id]);
-
   }
 
   buy(id: number){
@@ -43,7 +44,6 @@ export class ArticleComponent implements OnInit{
 
       let achat = {product: data,quantity: 1};
       const cartou = this.cart;
-      
       
       for(let ligne of cartou) {
         if(ligne.product.id === achat.product.id) {
@@ -61,4 +61,7 @@ export class ArticleComponent implements OnInit{
   cartPage(){
     this.router.navigate(['', 'cart']);
   }
+  
 }
+
+

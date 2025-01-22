@@ -1,16 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../product';
 import { ProductVitamin } from '../productVitamin';
 
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  
-  selector: 'app-vit-form',
-  templateUrl: './vit-form.component.html',
-  styleUrls: ['./vit-form.component.css', '../shared.css']
+  selector: 'app-new-vit-form',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './new-vit-form.component.html',
+  styleUrls: ['./new-vit-form.component.css', '../shared.css']
 })
-export class VitFormComponent implements OnInit {
+export class NewVitFormComponent implements OnInit{
   constructor(
   ) {}
 

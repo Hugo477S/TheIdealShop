@@ -3,6 +3,10 @@ h1 {
     margin-bottom: 1.2em;
 }
 
+.contImg {
+    position: relative;
+}
+
 .infosCont p, .product p {
     margin: 0;
 }
@@ -42,6 +46,7 @@ h1 {
     padding: 10px;
     width: 30%;
     justify-content: center;
+    flex-direction: column;
     margin-bottom: 2em;
 }
 

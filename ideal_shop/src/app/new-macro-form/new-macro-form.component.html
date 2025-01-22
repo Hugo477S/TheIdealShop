@@ -12,7 +12,7 @@
             <input class="inp" id="maxCalo" type="number" name="maxCalo" [placeholder]="maximalCalo" [(ngModel)]="maxCalo">
             </div>  
         </div>
-        <button class="filter btn-default" (click)="onCalorieFilterClick();">Filter by <br> Calories</button>  
+        <button type='button'  class="filter btn-default" (click)="onCalorieFilterClick();">Filter by <br> Calories</button>  
     </div>
     <div  class="interval">
         <h4>Glucides</h4>
@@ -26,7 +26,7 @@
             <input class="inp" id="maxCarb" type="number" name="maxCarb" [placeholder]="maximalCarb" [(ngModel)]="maxCarb">
             </div> 
         </div>
-        <button class="filter btn-default" (click)="onCarbFilterClick();">Filter by <br> Carbs</button> 
+        <button type='button'  class="filter btn-default" (click)="onCarbFilterClick();">Filter by <br> Carbs</button> 
     </div>
 
     <div class="interval">
@@ -41,7 +41,7 @@
                 <input class="inp" id="maxProt" type="number" name="maxProt" [placeholder]="maximalProt" [(ngModel)]="maxProt">
             </div>
         </div>
-        <button class="filter btn-default" (click)="onProtFilterClick();">Filter by <br> Proteins</button>  
+        <button type='button'  class="filter btn-default" (click)="onProtFilterClick();">Filter by <br> Proteins</button>  
     </div>
 
     <div class="interval">
@@ -56,7 +56,7 @@
                 <input class="inp" id="maxFib" type="number" name="maxFib" [placeholder]="maximalFib" [(ngModel)]="maxFib">
             </div>
         </div>
-        <button class="filter btn-default" (click)="onFiberFilterClick();">Filter by <br> Fibers</button>  
+        <button type='button'  class="filter btn-default" (click)="onFiberFilterClick();">Filter by <br> Fibers</button>  
     </div>
 </div>
 

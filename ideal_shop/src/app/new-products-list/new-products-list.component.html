@@ -1,0 +1,90 @@
+<div>
+    <app-new-navig-product (vitOrderToParent)="vitOrderFromNav($event)" (dataFromNav)="catPlatHandler($event)"></app-new-navig-product>
+
+    <div class="tutoriel" *ngIf="catPlat == ''">
+        <app-new-tutorial></app-new-tutorial>
+    </div>
+
+    <div class="laitForm" *ngIf="catPlat == 'laitage'">
+        <app-new-laitage-form (laitProds)="receiveProductsFromLaitage($event)"  [inputFromParent]="[products, catPlat]"></app-new-laitage-form>
+    </div>
+
+    <div class="vitForm" *ngIf="catPlat == 'legume' || catPlat == 'fruit'">
+        <app-new-vit-form (vitOrderFromVit)="vitOrderFromVita($event)" (productsVit)="receiveProductsFromVit($event)"  [inputFromParent]="[products, catPlat]"></app-new-vit-form>
+    </div>
+
+    <form class="macroForm" *ngIf="catPlat == 'plat' || catPlat == 'junk'">
+        <app-new-macro-form (childEmitter)="receiveProductsFromMacros($event)" [inputFromParent]="[products, catPlat]"></app-new-macro-form>
+    </form>  
+
+    <div class="products" *ngIf="vitOrder == false">
+        <app-new-article class="product" *ngFor = "let product of products" [product] = product>
+        </app-new-article>
+    </div>
+
+    <div *ngIf="vitOrder == true && catPlat == 'legume'" class="productsByVit">
+        <p class="voTitle">Les plus vitaminés</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsAverageVit" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine A</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsA" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine B</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsB" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine C</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsC" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine E</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsE" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine K</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsK" [product] = product>
+            </app-new-article>
+        </div>
+    </div>
+
+    <div *ngIf="vitOrder == true && catPlat == 'fruit'" class="productsByVit">
+        <p class="voTitle">Les plus vitaminés</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsAverageVit" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine A</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsA" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine B</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsB" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine C</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsC" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine E</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsE" [product] = product>
+            </app-new-article>
+        </div>
+        <p class="voTitle">Vitamine K</p>
+        <div class="products">
+            <app-new-article class="product" *ngFor = "let product of productsK" [product] = product>
+            </app-new-article>
+        </div>
+    </div>
+</div>

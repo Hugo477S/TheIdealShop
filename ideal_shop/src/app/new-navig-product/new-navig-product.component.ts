@@ -1,13 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
+
 @Component({
-  selector: 'app-navig-product',
-  templateUrl: './navig-product.component.html',
-  styleUrls: ['./navig-product.component.css', '../shared.css']
+  selector: 'app-new-navig-product',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './new-navig-product.component.html',
+  styleUrls: ['./new-navig-product.component.css', '../shared.css']
 })
-export class NavigProductComponent implements OnInit {
+export class NewNavigProductComponent implements OnInit {
 
   constructor(private productService: ProductService){}
 
@@ -52,4 +56,7 @@ export class NavigProductComponent implements OnInit {
       }
     }
   }
+
 }
+
+

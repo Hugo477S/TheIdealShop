@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductComponent } from './product.component';
+import { NewLaitageFormComponent } from './new-laitage-form.component';
 
-describe('ProductComponent', () => {
-  let component: ProductComponent;
-  let fixture: ComponentFixture<ProductComponent>;
+describe('NewLaitageFormComponent', () => {
+  let component: NewLaitageFormComponent;
+  let fixture: ComponentFixture<NewLaitageFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductComponent]
+      imports: [NewLaitageFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProductComponent);
+    fixture = TestBed.createComponent(NewLaitageFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
